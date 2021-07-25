@@ -2,7 +2,7 @@ import * as React from 'react'
 import { WindowLocation } from '@reach/router'
 import { Layout } from '@components'
 import { themeManager } from '@lib'
-import * as $ from './index.styles'
+import * as $ from '@styles/pages/index.styles'
 
 interface IndexPageProps {
   readonly location: WindowLocation
