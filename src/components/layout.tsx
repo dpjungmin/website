@@ -2,7 +2,7 @@ import * as React from 'react'
 import { WindowLocation } from '@reach/router'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle, theme } from '@styles'
-import { themeManager } from '@lib'
+// import { themeManager } from '@lib'
 
 interface LayoutProps {
   readonly location: WindowLocation
@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   console.log(location)
 
-  React.useLayoutEffect(themeManager.init, [])
+  // React.useEffect(themeManager.init, [])
 
   return (
     <div id="root">
