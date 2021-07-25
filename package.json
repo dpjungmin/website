@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "website",
-  "author": "dpjungmin",
+  "author": "David Park <dpjungmin@gmail.com>",
   "keywords": [
     "gatsby"
   ],
@@ -12,15 +12,20 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "^7.31.0",
     "gatsby": "^3.9.0",
     "gatsby-plugin-emotion": "^6.9.0",
     "gatsby-plugin-gatsby-cloud": "^2.9.0",
+    "gatsby-plugin-styled-components": "^4.9.0",
+    "lodash": "^4.17.21",
+    "prettier": "^2.3.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.3.0"
   }
 }
