@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "website",
+    siteUrl: 'https://www.yourdomain.tld',
+    title: 'website',
   },
-  plugins: ["gatsby-plugin-emotion", "gatsby-plugin-gatsby-cloud"],
-};
+  plugins: ['gatsby-plugin-styled-components', 'gatsby-plugin-gatsby-cloud'],
+}
