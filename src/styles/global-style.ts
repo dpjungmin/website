@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import fonts from './fonts'
-import { variables, Theme, theme } from './variables'
+import { variables } from './variables'
 
 const GlobalStyle = createGlobalStyle`
   ${fonts}
@@ -17,14 +17,6 @@ const GlobalStyle = createGlobalStyle`
   html {    
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-  }
-
-  html[data-theme=${Theme.LIGHT}] {
-    ${theme[Theme.LIGHT]} 
-  }
-
-  html[data-theme=${Theme.DARK}] {
-    ${theme[Theme.DARK]}
   }
 
   body {
