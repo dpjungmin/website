@@ -24,9 +24,7 @@ const storage = {
     } catch (_) {}
   },
 
-  keys: {
-    theme: 'theme',
-  },
+  keys: {},
 }
 
 export { storage }
