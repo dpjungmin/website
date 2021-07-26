@@ -1,26 +1,5 @@
 import { css } from 'styled-components'
 
-enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
-
-const theme = {
-  [Theme.LIGHT]: css`
-    :root {
-      --color__background: white;
-      --color__text: black;
-    }
-  `,
-
-  [Theme.DARK]: css`
-    :root {
-      --color__background: black;
-      --color__text: white;
-    }
-  `,
-}
-
 const variables = css`
   :root {
     --font-size__xxs: 12px;
@@ -39,7 +18,10 @@ const variables = css`
     --font-weight__medium: 500;
     --font-weight__bold: 700;
     --font-weight__black: 900;
+
+    --color__background: white;
+    --color__text: black;
   }
 `
 
-export { variables, Theme, theme }
+export { variables }

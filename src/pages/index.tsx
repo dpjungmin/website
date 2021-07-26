@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { WindowLocation } from '@reach/router'
 import { Layout } from '@components'
-import { themeManager } from '@lib'
 import * as $ from '@styles/pages/index.styles'
 
 interface IndexPageProps {
@@ -12,7 +11,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
   return (
     <Layout location={location}>
       <$.Container>
-        <div onClick={themeManager.toggle}>Toggle</div>
+        <h1>Hello!</h1>
       </$.Container>
     </Layout>
   )

@@ -1,7 +1,6 @@
 const path = require('path')
-const _ = require('lodash')
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
