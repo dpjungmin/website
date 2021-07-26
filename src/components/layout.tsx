@@ -11,12 +11,12 @@ const Layout: React.FC<LayoutProps> = ({ children, location }) => {
   console.log(location)
 
   return (
-    <div id="root">
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {children}
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div id="root">
+        <div id="content">{children}</div>
+      </div>
+    </ThemeProvider>
   )
 }
 
