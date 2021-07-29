@@ -21,6 +21,8 @@ const variables = css`
 
     --color__background: white;
     --color__text: black;
+
+    --color__purple-1: #c3a6ff;
   }
 `
 
