@@ -1,6 +1,7 @@
 const gatsbySourceFilesystem = require('./plugins/filesystem')
 const gatsbyTransformerRemark = require('./plugins/remark')
 const gatsbyPluginFeed = require('./plugins/rss-feed')
+const gatsbyPluginManifest = require('./plugins/pwa')
 
 module.exports = {
   siteMetadata: {
@@ -15,5 +16,8 @@ module.exports = {
     gatsbySourceFilesystem,
     gatsbyTransformerRemark,
     gatsbyPluginFeed,
+    gatsbyPluginManifest,
+    // `gatsby-plugin-offline` must come after `gatsby-plugin-manifest`
+    'gatsby-plugin-offline',
   ],
 }
