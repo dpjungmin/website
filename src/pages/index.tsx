@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { WindowLocation } from '@reach/router'
-import { Layout } from '@components'
+import { Layout, SEO } from '@components'
 import * as $ from '@styles/pages/index.styles'
 
 interface IndexPageProps {
@@ -10,6 +10,7 @@ interface IndexPageProps {
 const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
   return (
     <Layout location={location}>
+      <SEO />
       <$.Container>
         <h1>Hello!</h1>
       </$.Container>
