@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-gatsby-cloud',
     gatsbySourceFilesystem,
     gatsbyTransformerRemark,

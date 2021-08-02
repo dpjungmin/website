@@ -20,6 +20,8 @@
     "paths": {
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
+      "@context": ["./src/context"],
+      "@context/*": ["./src/context/*"],
       "@styles": ["./src/styles"],
       "@styles/*": ["./src/styles/*"],
       "@lib": ["./src/lib"],
