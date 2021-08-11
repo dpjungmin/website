@@ -4,19 +4,29 @@ title: Making a Site with User Authentication
 slug: making-a-site-with-user-authentication
 ---
 
-Sometimes, you need to create a site with gated content, restricted to only authenticated users. Using Gatsby, you may achieve this using the concept of [client-only routes](/docs/client-only-routes-and-user-authentication/), to define which pages a user can view only after logging in.
+Sometimes, you need to create a site with gated content, restricted to only
+authenticated users. Using Gatsby, you may achieve this using the concept of
+[client-only routes](/docs/client-only-routes-and-user-authentication/), to
+define which pages a user can view only after logging in.
 
 ## Prerequisites
 
-You should have already configured your environment to be able to use the `gatsby-cli`. A good starting point is the [main tutorial](/tutorial).
+You should have already configured your environment to be able to use the
+`gatsby-cli`. A good starting point is the [main tutorial](/tutorial).
 
 ## Security notice
 
-In production, you should use a tested and robust solution to handle the authentication. [Auth0](https://www.auth0.com), [Firebase](https://firebase.google.com), and [Passport.js](http://passportjs.org) are good examples. This tutorial will only cover the authentication workflow, but you should take the security of your app as seriously as possible.
+In production, you should use a tested and robust solution to handle the
+authentication. [Auth0](https://www.auth0.com),
+[Firebase](https://firebase.google.com), and
+[Passport.js](http://passportjs.org) are good examples. This tutorial will only
+cover the authentication workflow, but you should take the security of your app
+as seriously as possible.
 
 ## Building your Gatsby app
 
-Start by creating a new Gatsby project using the barebones `hello-world` starter:
+Start by creating a new Gatsby project using the barebones `hello-world`
+starter:
 
 ```shell
 gatsby new gatsby-auth gatsbyjs/gatsby-starter-hello-world
@@ -53,7 +63,8 @@ export default function NavBar() {
 }
 ```
 
-And create the layout component that will wrap all pages and display navigation bar:
+And create the layout component that will wrap all pages and display navigation
+bar:
 
 ```jsx:title=src/components/layout.js
 import React from "react"
@@ -90,7 +101,8 @@ export default function Home() {
 
 ## Authentication service
 
-For this tutorial you will use a hardcoded user/password. Create the folder `src/services` and add the following content to the file `auth.js`:
+For this tutorial you will use a hardcoded user/password. Create the folder
+`src/services` and add the following content to the file `auth.js`:
 
 ```javascript:title=src/services/auth.js
 export const isBrowser = () => typeof window !== "undefined"
@@ -127,13 +139,21 @@ export const logout = callback => {
 }
 ```
 
-_The guide on [adding authentication](/docs/building-a-site-with-authentication/) contains more information about the flow for connecting Gatsby to an external service._
+_The guide on
+[adding authentication](/docs/building-a-site-with-authentication/) contains
+more information about the flow for connecting Gatsby to an external service._
 
 ## Creating client-only routes
 
-At the beginning of this tutorial, you created a "hello world" Gatsby site, which includes the `@reach/router` library. Now, using the [@reach/router](https://reach.tech/router/) library, you can create routes available only to logged-in users. This library is used by Gatsby under the hood, so you don't even have to install it.
+At the beginning of this tutorial, you created a "hello world" Gatsby site,
+which includes the `@reach/router` library. Now, using the
+[@reach/router](https://reach.tech/router/) library, you can create routes
+available only to logged-in users. This library is used by Gatsby under the
+hood, so you don't even have to install it.
 
-First, create `gatsby-node.js` in root directory of your project. You will define that any route that starts with `/app/` is part of your restricted content and the page will be created on demand:
+First, create `gatsby-node.js` in root directory of your project. You will
+define that any route that starts with `/app/` is part of your restricted
+content and the page will be created on demand:
 
 ```javascript:title=gatsby-node.js
 // Implement the Gatsby API “onCreatePage”. This is
@@ -152,9 +172,11 @@ exports.onCreatePage = async ({ page, actions }) => {
 }
 ```
 
-> Note: There is a convenient plugin that already does this work for you: [gatsby-plugin-create-client-paths](/plugins/gatsby-plugin-create-client-paths)
+> Note: There is a convenient plugin that already does this work for you:
+> [gatsby-plugin-create-client-paths](/plugins/gatsby-plugin-create-client-paths)
 
-Now, you must create a generic page that will have the task to generate the restricted content:
+Now, you must create a generic page that will have the task to generate the
+restricted content:
 
 ```jsx:title=src/pages/app.js
 import React from "react"
@@ -175,7 +197,8 @@ const App = () => (
 export default App
 ```
 
-Next, add the components regarding those new routes. The profile component to show the user data:
+Next, add the components regarding those new routes. The profile component to
+show the user data:
 
 ```jsx:title=src/components/profile.js
 import React from "react"
@@ -254,11 +277,13 @@ class Login extends React.Component {
 export default Login
 ```
 
-Though the routing is working now, you still can access all routes without restriction.
+Though the routing is working now, you still can access all routes without
+restriction.
 
 ## Controlling private routes
 
-To check if a user can access the content, you can wrap the restricted content inside a PrivateRoute component:
+To check if a user can access the content, you can wrap the restricted content
+inside a PrivateRoute component:
 
 ```jsx:title=src/components/privateRoute.js
 import React from "react"
@@ -302,9 +327,11 @@ export default App
 
 ## Refactoring to use new routes and user data
 
-With the client-only routes in place, you must now refactor some files to account for the user data available.
+With the client-only routes in place, you must now refactor some files to
+account for the user data available.
 
-The navigation bar will show the user name and logout option to registered users:
+The navigation bar will show the user name and logout option to registered
+users:
 
 ```jsx:title=src/components/nav-bar.js
 import React from "react"
@@ -409,14 +436,17 @@ const Profile = () => (
 export default Profile
 ```
 
-You should now have a complete authentication workflow, functioning with both login and a user-restricted area!
+You should now have a complete authentication workflow, functioning with both
+login and a user-restricted area!
 
 ## Further reading
 
-If you want to learn more about using production-ready auth solutions, these links may help:
+If you want to learn more about using production-ready auth solutions, these
+links may help:
 
 - [Gatsby repo simple auth example](https://github.com/gatsbyjs/gatsby/tree/master/examples/simple-auth)
-- [A Gatsby email _application_](https://github.com/DSchau/gatsby-mail), using React Context API to handle authentication
+- [A Gatsby email _application_](https://github.com/DSchau/gatsby-mail), using
+  React Context API to handle authentication
 - [The Gatsby store for swag and other Gatsby goodies](https://github.com/gatsbyjs/store.gatsbyjs.org)
 - [Building a blog with Gatsby, React and Webtask.io!](https://auth0.com/blog/building-a-blog-with-gatsby-react-and-webtask/)
 - [JAMstack PWA — Let’s Build a Polling App. with Gatsby.js, Firebase, and Styled-components Pt. 2](https://medium.com/@UnicornAgency/jamstack-pwa-lets-build-a-polling-app-with-gatsby-js-firebase-and-styled-components-pt-2-9044534ea6bc)

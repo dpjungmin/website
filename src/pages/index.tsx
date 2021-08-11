@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { WindowLocation } from '@reach/router'
-import { Layout, SEO } from '@components'
-import * as $ from '@styles/pages/index.styles'
+import * as React from "react"
+import { WindowLocation } from "@reach/router"
+import { Layout, SEO } from "@components"
+import * as $ from "@styles/pages/index.styles"
 
 interface IndexPageProps {
   readonly location: WindowLocation

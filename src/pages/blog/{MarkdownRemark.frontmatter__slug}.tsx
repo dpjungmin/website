@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { WindowLocation } from '@reach/router'
-import { graphql } from 'gatsby'
-import { Layout } from '@components'
+import * as React from "react"
+import { WindowLocation } from "@reach/router"
+import { graphql } from "gatsby"
+import { Layout } from "@components"
 
 interface PostTemplateProps {
   readonly location: WindowLocation
@@ -14,8 +14,8 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   pageContext,
   data,
 }) => {
-  console.log('pageContext', pageContext)
-  console.log('data', data)
+  console.log("pageContext", pageContext)
+  console.log("data", data)
 
   const {
     html,

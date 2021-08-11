@@ -1,3 +1,3 @@
-export { EntryLayout } from './entry-layout'
-export { Layout } from './layout'
-export { SEO } from './seo'
+export { EntryLayout } from "./entry-layout"
+export { Layout } from "./layout"
+export { SEO } from "./seo"

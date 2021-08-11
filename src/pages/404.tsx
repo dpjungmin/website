@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { WindowLocation } from '@reach/router'
-import { Layout } from '@components'
-import * as $ from '@styles/pages/404.styles'
+import * as React from "react"
+import { WindowLocation } from "@reach/router"
+import { Layout } from "@components"
+import * as $ from "@styles/pages/404.styles"
 
 interface NotFoundPageProps {
   readonly location: WindowLocation

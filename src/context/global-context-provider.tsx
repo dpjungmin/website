@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from "react"
 
 const GlobalContext = React.createContext<any>(null)
 const useGlobalContext = () => React.useContext(GlobalContext)

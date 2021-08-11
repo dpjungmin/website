@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { GlobalContextProvider } from '@context'
+import * as React from "react"
+import { GlobalContextProvider } from "@context"
 
 interface EntryLayoutProps {}
 

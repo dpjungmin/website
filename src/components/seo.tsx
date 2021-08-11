@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import * as React from "react"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
 interface SEOProps {
   title?: string
@@ -26,7 +26,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, slug, meta = [] }) => {
   const defaultTitle = site.siteMetadata.title
   const defaultDescription = site.siteMetadata.description
 
-  if (slug?.charAt(0) === '/') {
+  if (slug?.charAt(0) === "/") {
     slug = slug.substring(1)
   }
 
@@ -37,21 +37,21 @@ const SEO: React.FC<SEOProps> = ({ title, description, slug, meta = [] }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang: 'en',
+        lang: "en",
       }}
       title={_title}
       meta={[
-        { name: 'description', content: _description },
+        { name: "description", content: _description },
 
-        { property: 'og:title', content: _title },
-        { property: 'og:description', content: _description },
-        { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: _url },
+        { property: "og:title", content: _title },
+        { property: "og:description", content: _description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: _url },
         // { property: 'og:image', content: `${defaultUrl}/logo.png` },
 
-        { property: 'twitter:card', content: 'summary' },
-        { property: 'twitter:title', content: _title },
-        { property: 'twitter:description', content: _description },
+        { property: "twitter:card", content: "summary" },
+        { property: "twitter:title", content: _title },
+        { property: "twitter:description", content: _description },
         // { property: 'twitter:image', content: `${defaultUrl}/logo.png` },
       ].concat(meta)}
     />

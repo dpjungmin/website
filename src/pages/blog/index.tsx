@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { WindowLocation } from '@reach/router'
-import { graphql, Link } from 'gatsby'
-import { Layout } from '@components'
+import * as React from "react"
+import { WindowLocation } from "@reach/router"
+import { graphql, Link } from "gatsby"
+import { Layout } from "@components"
 
 interface BlogPageProps {
   readonly location: WindowLocation
@@ -13,7 +13,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <h4 style={{ margin: '0' }}>{totalCount}</h4>
+      <h4 style={{ margin: "0" }}>{totalCount}</h4>
       {nodes.map(({ id, frontmatter: { title, slug } }) => {
         console.log(slug)
         return (
