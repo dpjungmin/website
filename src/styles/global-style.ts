@@ -1,5 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
-import fonts from './fonts'
+import { createGlobalStyle } from "styled-components"
+import { fonts } from "./fonts"
+import { theme } from "@theme"
 import { variables } from './variables'
 
 const GlobalStyle = createGlobalStyle`
@@ -38,8 +39,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     color: var(--color__text, black);
     background-color: var(--color__background, white);
-    font: 1rem/1.6 sans-serif;    
-    font-size: calc(1vw + 1vh + 0.5vmin);
+    font-size: calc(10px + 0.33vw);
+    font-family: "Open Sans";
+    -webkit-font-smoothing: antialiased;
+    color: ${theme.colors.text.primary};
   }
 
   #root {

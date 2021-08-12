@@ -1,6 +1,5 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
-export const Container = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter};
-  min-height: 100vh;
+export const Container = styled.main`
+  counter-reset: section;
 `

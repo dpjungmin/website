@@ -1,2 +1,2 @@
-export { storage } from './storage'
-export { themeManager } from './theme-manager'
+export { storage } from "./storage"
+export { fitText } from "./fit-text"
