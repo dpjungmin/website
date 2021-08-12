@@ -3,33 +3,6 @@ title: "Part 0: Set Up Your Development Environment"
 tableOfContentsDepth: 2
 ---
 
-import { Announcement, Notification, LinkButton } from "gatsby-interface"
-import Collapsible from "@components/collapsible"
-import { MdInfo, MdArrowForward } from "react-icons/md"
-
-<Notification
-  Icon={MdInfo}
-  tone="WARNING"
-  variant="SECONDARY"
-  content={
-    <div>
-      <p>
-        <strong>Note:</strong> We{"'"}re still working on updating this Tutorial
-        to use Gatsby v3. The first few parts of the new Tutorial have been
-        released here, and subsequent parts will be added as we finish them.
-      </p>
-      <p style={{ marginBottom: 0 }}>
-        If you{"'"}re looking for a full experience in the meantime, you can
-        check out the (slightly outdated){" "}
-        <a href="https://v2.gatsbyjs.com/docs/tutorial/">
-          <strong>Gatsby v2 Tutorial</strong>
-        </a>
-        .
-      </p>
-    </div>
-  }
-/>
-
 ## Introduction
 
 Welcome to the Gatsby Tutorial! We're excited you're here.
@@ -50,12 +23,6 @@ By the end of this part of the Tutorial, you will:
 The Tutorial is intended to be as approachable as possible for people who are
 new to Gatsby and React. With that said, if you are brand new to web development
 (welcome!), you might find it helpful to learn some fundamentals first.
-
-<Announcement style={{ marginBottom: "1.5rem" }}>
-  Don't worry, you don't need to be an expert with these! A high-level
-  understanding of the basics should be enough. You'll pick up a lot through the
-  course of the Tutorial.
-</Announcement>
 
 - **HTML**: A markup language that every web browser is able to understand. It
   stands for HyperText Markup Language. You use HTML to add structure to your
@@ -127,207 +94,6 @@ add packages to your site (like Gatsby plugins) and to run command line tasks
 Follow the installation instructions below, based on your computer's operating
 system. (Click the header to expand the section.)
 
-<Collapsible
-  summary={<h4>Mac instructions</h4>}
->
-
-To install Gatsby and Node.js on a Mac, it is recommended to use
-[Homebrew](https://brew.sh/). A little set-up in the beginning can save you from
-some headaches later on!
-
-##### How to install or verify Homebrew on your computer:
-
-1. Open the Terminal app.
-2. See if Homebrew is installed by typing the command below. You should see
-   "Homebrew" and a version number.
-
-```shell
-brew -v
-```
-
-3. If not, [download and install Homebrew](https://docs.brew.sh/Installation).
-4. Once you've installed Homebrew, repeat step 2 to verify that you get the
-   expected version message.
-
-##### Install Xcode Command Line Tools:
-
-1. Open your Terminal.
-2. Install Xcode Command line tools by running:
-
-```shell
-xcode-select --install
-```
-
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-If that fails, download it
-[directly from Apple's site](https://developer.apple.com/download/more/), after
-signing-in with an Apple developer account.
-
-</Announcement>
-
-3. After being prompted to start the installation, you'll be prompted again to
-   accept a software license for the tools to download.
-
-##### Install Node
-
-1. Open your Terminal
-2. Install Node with Homebrew:
-
-```shell
-brew install node
-```
-
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-If you don't want to install it through Homebrew, download the latest Node.js
-version from [the official Node.js website](https://nodejs.org/en/), double
-click on the downloaded file and go through the installation process.
-
-</Announcement>
-
-</Collapsible>
-
-<Collapsible
-  summary={<h4>Windows instructions</h4>}
->
-
-Download and install the latest Node.js version from
-[the official Node.js website](https://nodejs.org/en/)
-
-</Collapsible>
-
-<Collapsible
-  summary={<h4>Linux instructions</h4>}
->
-
-Install nvm (Node Version Manager) and needed dependencies. nvm is used to
-manage Node.js and all its associated versions.
-
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-When installing a package, if it asks for confirmation, type `y` and press
-enter.
-
-</Announcement>
-
-Select your distro:
-
-- [Ubuntu, Debian, and other apt based distros](#ubuntu-debian-and-other-apt-based-distros)
-- [Arch, Manjaro and other pacman based distros](#arch-manjaro-and-other-pacman-based-distros)
-- [Fedora, RedHat, and other dnf based distros](#fedora-redhat-and-other-dnf-based-distros)
-
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-If the Linux distribution you are using is not listed here, please find
-instructions on the web.
-
-</Announcement>
-
-##### Ubuntu, Debian, and other `apt` based distros:
-
-1. Make sure your Linux distribution is ready to go run an update and an
-   upgrade:
-
-```shell
-sudo apt update
-sudo apt -y upgrade
-```
-
-2. Install curl which allows you to transfer data and download additional
-   dependencies:
-
-```shell
-sudo apt-get install curl
-```
-
-3. After it finishes installing, download the latest nvm version:
-
-```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
-
-4. Confirm this has worked. The output should be a version number. (Note that
-   you may have to reload your bash configuration. Close and restart the
-   terminal or run `source ~/.bashrc`.)
-
-```shell
-nvm --version
-```
-
-5. Continue with the section:
-   [Set default Node.js version](#set-default-nodejs-version)
-
-##### Arch, Manjaro and other `pacman` based distros:
-
-1. Make sure your distribution is ready to go:
-
-```shell
-sudo pacman -Syu
-```
-
-2. These distros come installed with curl, so you can use that to download nvm:
-
-```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
-
-3. Before using nvm, you need to install additional dependencies by running:
-
-```shell
-sudo pacman -S grep awk tar
-```
-
-4. Confirm this has worked. The output should be a version number.
-
-```shell
-nvm --version
-```
-
-5. Continue with the section:
-   [Set default Node.js version](#set-default-nodejs-version)
-
-##### Fedora, RedHat, and other `dnf` based distros:
-
-1. These distros come installed with curl, so you can use that to download nvm:
-
-```shell
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-```
-
-2. Confirm this has worked. The output should be a version number.
-
-```shell
-nvm --version
-```
-
-3. Continue with the section:
-   [Set default Node.js version](#set-default-nodejs-version)
-
-##### Set default Node.js version
-
-When nvm is installed, it does not default to a particular node version. You’ll
-need to install the version you want and give nvm instructions to use it. This
-example uses the version 14 release, but more recent version numbers can be used
-instead.
-
-```shell
-nvm install 14
-nvm use 14
-```
-
-Confirm that this worked. The output should be a version number.
-
-```shell
-node --version
-npm --version
-```
-
-Once you have followed the installation steps and you have checked everything is
-installed properly, you can continue to the next step.
-
-</Collapsible>
-
 ### Git
 
 Git is a free and open source distributed version control system. It's a tool
@@ -361,15 +127,6 @@ latest version.)
 npm install -g gatsby-cli
 ```
 
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-**Note:** When you install Gatsby and run it for the first time, you'll see a
-short message notifying you about anonymous usage data that is being collected
-for Gatsby commands. You can read more about how that data is pulled out and
-used in the [telemetry doc](/docs/telemetry).
-
-</Announcement>
-
 Check that you have the correct version installed by running the command below.
 You should be on v3 or newer.
 
@@ -384,18 +141,6 @@ gatsby --help
 ```
 
 ![Check Gatsby commands in terminal](05-gatsby-help.png)
-
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-**Troubleshooting**
-
-If you are unable to successfully run the Gatsby CLI due to a permissions issue,
-you may want to check out the
-[npm docs on fixing permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions),
-or
-[this guide](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md).
-
-</Announcement>
 
 ### Visual Studio Code
 
@@ -430,28 +175,7 @@ Cloud, you will need to set up a GitHub account and a Gatsby Cloud account.
 Now that you have all the knowledge and tools you'll need, you're ready for the
 Tutorial!
 
-<Announcement style={{marginBottom: "1.5rem"}}>
-
-**Share Your Feedback!**
-
-Our goal is for this Tutorial to be helpful and easy to follow. We'd love to
-hear your feedback about what you liked or didn't like about this part of the
-Tutorial.
-
-Use the "Was this doc helpful to you?" form at the bottom of this page to let us
-know what worked well and what we can improve.
-
-</Announcement>
-
 ### What's coming next?
 
 In Part 1 of the Tutorial, you'll create your first Gatsby site and deploy it
 online for everyone to see.
-
-<LinkButton
-  to="/docs/tutorial/part-1/"
-  rightIcon={<MdArrowForward />}
-  variant="SECONDARY"
->
-  Continue to Part 1
-</LinkButton>

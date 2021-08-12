@@ -24,6 +24,8 @@
       "@context/*": ["./src/context/*"],
       "@styles": ["./src/styles"],
       "@styles/*": ["./src/styles/*"],
+      "@theme": ["./src/styles/theme"],
+      "@theme/*": ["./src/styles/theme/*"],
       "@lib": ["./src/lib"],
       "@lib/*": ["./src/lib/*"]
     }

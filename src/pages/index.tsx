@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import { WindowLocation } from "@reach/router"
 import { Layout, SEO } from "@components"
 import * as $ from "@styles/pages/index.styles"
@@ -20,6 +21,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
         >
           Follow RSS
         </a>
+        <Link to="/blog">Blog</Link>
       </$.Container>
     </Layout>
   )

@@ -1,7 +1,8 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyle, theme } from "@styles"
+import { GlobalStyle } from "@styles"
+import { theme } from "@theme"
 
 interface LayoutProps {
   readonly location: WindowLocation
