@@ -1,10 +1,8 @@
 import { createGlobalStyle } from "styled-components"
-import { fonts } from "./fonts"
 import { theme } from "@theme"
-import { variables } from './variables'
+import { variables } from "./variables"
 
 const GlobalStyle = createGlobalStyle`
-  ${fonts}
   ${variables}
 
   *,
@@ -37,12 +35,11 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     line-height: 1.5;
-    color: var(--color__text, black);
-    background-color: var(--color__background, white);
-    font-size: calc(10px + 0.33vw);
-    font-family: "Open Sans";
-    -webkit-font-smoothing: antialiased;
     color: ${theme.colors.text.primary};
+    background-color: ${theme.colors.ui.background};
+    font-size: calc(10px + 0.33vw);
+    font-family: ${theme.fonts.OpenSans}; 
+    -webkit-font-smoothing: antialiased;
   }
 
   #root {
@@ -101,6 +98,26 @@ const GlobalStyle = createGlobalStyle`
   a:link,
   a:visited {
     text-decoration: none;
+  }
+
+  a {
+    text-decoration: none;
+    transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    color: ${theme.colors.link.color};
+    border-bottom: 1px solid ${theme.colors.link.border};
+
+    &:hover {
+      border-bottom-color: ${theme.colors.link.hoverBorder};
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${theme.colors.text.header};
   }
 
   video[autoplay]:not([muted]) {

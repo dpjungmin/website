@@ -1,4 +1,5 @@
 const gatsbySourceFilesystem = require("./plugins/filesystem")
+const chakra = require("./plugins/chakra")
 const gatsbyPluginPageCreator = require("./plugins/page-creator")
 const gatsbyPluginMdx = require("./plugins/mdx")
 const gatsbyTransformerRemark = require("./plugins/remark")
@@ -14,6 +15,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
+    chakra,
     "gatsby-plugin-sharp",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-gatsby-cloud",

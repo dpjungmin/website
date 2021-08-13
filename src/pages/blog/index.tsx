@@ -2,6 +2,7 @@ import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { graphql, Link } from "gatsby"
 import { Layout } from "@components"
+import * as $ from "@styles/pages/blog/index.styles"
 
 interface BlogPageProps {
   readonly location: WindowLocation
@@ -9,22 +10,29 @@ interface BlogPageProps {
 }
 
 const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
-  const { totalCount, nodes } = data.allMarkdownRemark
+  const { nodes } = data.allMarkdownRemark
 
   return (
     <Layout location={location}>
-      <main>
-        <h4 style={{ margin: "0" }}>{totalCount}</h4>
-        {nodes.map(({ id, frontmatter: { title, slug } }) => {
-          console.log(slug)
-          return (
-            <div key={id}>
-              <h3>{title}</h3>
-              <Link to={`/blog/${slug}`}>{slug}</Link>
-            </div>
-          )
-        })}
-      </main>
+      <$.Container className="fillHeight">
+        <$.Hero>
+          <h1>Hi I'm David, and this is my blog.</h1>
+          <p>This website is under construction.</p>
+        </$.Hero>
+        <$.Articles>
+          <h1>
+            Articles <span>(markdown copied from gatsby for testing)</span>
+          </h1>
+          {nodes.map(({ id, frontmatter: { title, slug } }) => {
+            console.log(slug)
+            return (
+              <div key={id}>
+                <Link to={`/blog/${slug}`}>{title}</Link>
+              </div>
+            )
+          })}
+        </$.Articles>
+      </$.Container>
     </Layout>
   )
 }
