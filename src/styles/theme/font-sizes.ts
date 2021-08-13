@@ -1,4 +1,12 @@
-type FontSizeToken = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl"
+type FontSizeToken =
+  | "xxs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xxl"
+  | "heading"
 
 type FontSizes = Record<FontSizeToken, string>
 
@@ -10,6 +18,7 @@ const fontSizes: FontSizes = {
   lg: "18px",
   xl: "20px",
   xxl: "22px",
+  heading: "32px",
 }
 
 export { fontSizes }

@@ -2,8 +2,8 @@ import { breakpoints } from "./breakpoints"
 
 const mq = {}
 
-for (const breakpoint in breakpoints) {
-  mq[breakpoint] = `@media (min-width: ${breakpoints[breakpoint]})`
+for (const bp in breakpoints) {
+  mq[bp] = `@media (min-width: ${breakpoints[bp]})`
 }
 
 export { mq as mediaQueries }

@@ -5,9 +5,7 @@ import "@fontsource/open-sans/600.css"
 import * as React from "react"
 import { GlobalContextProvider } from "@context"
 
-interface EntryLayoutProps {}
-
-const EntryLayout: React.FC<EntryLayoutProps> = ({ children }) => {
+const EntryLayout: React.FC = ({ children }) => {
   return <GlobalContextProvider>{children}</GlobalContextProvider>
 }
 

@@ -1,9 +1,7 @@
 import * as React from "react"
 import * as $ from "./hero.styles"
 
-interface HeroProps {}
-
-const Hero: React.FC<HeroProps> = () => {
+const Hero: React.FC = () => {
   return (
     <$.Section>
       <h1>Hello.</h1>
