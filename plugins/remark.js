@@ -17,6 +17,13 @@ module.exports = {
         },
       },
       {
+        resolve: "gatsby-remark-external-links",
+        options: {
+          target: "_blank",
+          rel: "noreferrer",
+        },
+      },
+      {
         resolve: "gatsby-remark-code-titles",
         options: {
           className: "gatsby-remark-code-title",

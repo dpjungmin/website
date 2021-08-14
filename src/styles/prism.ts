@@ -29,7 +29,19 @@ const prism = css`
     margin-bottom: 24px;
     position: relative;
 
-    @media (max-width: 720px) {
+    &::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({ theme }) => theme.colors.code.scrollbarTrack};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.colors.code.scrollbarThumb};
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.post}) {
       font-size: ${({ theme }) => theme.fontSizes.sm};
     }
   }
