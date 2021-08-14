@@ -17,31 +17,25 @@ const GlobalStyle = createGlobalStyle`
 
   html {    
     box-sizing: border-box;
-    /* scrollbar-width: thin; */
-    /* scrollbar-color: pink; */
+    scrollbar-width: thin;
   }
-
-  /* body::-webkit-scrollbar {
-    width: 12px;
-  } */
-  
-  /* body::-webkit-scrollbar-track {
-    background: blue;
-  } */
-
-  /* body::-webkit-scrollbar-thumb {
-    background-color: green;
-    border: 3px solid purple;
-    border-radius: 10px;
-  } */
 
   body {
     line-height: ${theme.lineHeights.default};
     color: ${theme.colors.text.primary};
     background-color: ${theme.colors.ui.background};
-    font-size: calc(10px + 0.33vw);
+    font-size: ${theme.fontSizes.lg};
     font-family: ${theme.fonts.OpenSans}; 
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+
+    @media (max-width: ${theme.breakpoints.phablet}) {
+      font-size: ${theme.fontSizes.md};
+    }
+
+    &.hidden {
+      overflow: hidden;
+    }
   }
 
   #root {

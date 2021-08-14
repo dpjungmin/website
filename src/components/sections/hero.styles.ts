@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Section = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
+  font-size: calc(10px + 0.33vw);
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;

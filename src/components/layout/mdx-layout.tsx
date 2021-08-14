@@ -8,7 +8,9 @@ const MdxLayout: React.FC = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div id="root">
-        <main id="content">{children}</main>
+        <main id="content" className="container">
+          {children}
+        </main>
       </div>
     </ThemeProvider>
   )

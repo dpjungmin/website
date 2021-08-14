@@ -8,7 +8,7 @@ export const Container = styled.main`
   min-height: 100vh;
   padding: 248px 0;
 
-  @media (max-width: 720px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.post}) {
     padding: 200px 14px;
   }
 `
@@ -20,14 +20,15 @@ export const Title = styled.h1`
 `
 
 export const Article = styled.article`
+  font-size: ${({ theme }) => theme.fontSizes.lg};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.post}) {
+    font-size: ${({ theme }) => theme.fontSizes.md};
+  }
+
   p {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
     line-height: ${({ theme }) => theme.lineHeights.loose};
     margin: 0 0 1.5rem;
-
-    @media (max-width: 720px) {
-      font-size: ${({ theme }) => theme.fontSizes.md};
-    }
   }
 
   h1,

@@ -1,4 +1,4 @@
-import { mediaQueries } from "./media-queries"
+import { breakpoints } from "./breakpoints"
 import { colors } from "./colors"
 import { fontSizes } from "./font-sizes"
 import { fontWeights } from "./font-weights"
@@ -9,7 +9,7 @@ import { zIndices } from "./z-indices"
 import { mixins } from "../mixins"
 
 const theme = {
-  mediaQueries,
+  breakpoints,
   colors,
   fontSizes,
   fontWeights,

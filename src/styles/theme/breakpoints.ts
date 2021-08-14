@@ -1,13 +1,21 @@
-type BreakpointToken = "mobile" | "phablet" | "tablet" | "desktop" | "hd"
+type BreakpointToken =
+  | "mobile"
+  | "phablet"
+  | "tablet"
+  | "desktop"
+  | "hd"
+  | "post"
 
-type Breakpoints = Record<BreakpointToken, number>
+type Breakpoints = Record<BreakpointToken, string>
 
 const breakpoints: Breakpoints = {
-  mobile: 360,
-  phablet: 550,
-  tablet: 750,
-  desktop: 1000,
-  hd: 1300,
+  mobile: "360px",
+  phablet: "550px",
+  tablet: "750px",
+  desktop: "1000px",
+  hd: "1300px",
+  // page specific breakpoints
+  post: "720px",
 }
 
 export { breakpoints }
