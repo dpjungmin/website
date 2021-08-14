@@ -10,7 +10,7 @@ interface NotFoundPageProps {
 const NotFoundPage: React.FC<NotFoundPageProps> = ({ location }) => {
   return (
     <Layout location={location}>
-      <$.Container>
+      <$.Container className="container">
         <$.Title>404</$.Title>
         <$.Subtitle>Not Found</$.Subtitle>
         <$.HomeButton to="/">Go Home</$.HomeButton>

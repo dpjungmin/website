@@ -1,8 +1,10 @@
 import { createGlobalStyle } from "styled-components"
 import { theme } from "@theme"
+import { prism } from "./prism"
 import { variables } from "./variables"
 
 const GlobalStyle = createGlobalStyle`
+  ${prism}
   ${variables}
 
   *,
@@ -34,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   } */
 
   body {
-    line-height: 1.5;
+    line-height: ${theme.lineHeights.default};
     color: ${theme.colors.text.primary};
     background-color: ${theme.colors.ui.background};
     font-size: calc(10px + 0.33vw);
@@ -55,12 +57,12 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
-  main {
+  .container {
     margin: 0 auto;
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
-    padding: 200px 150px;
+    padding: 200px 150px; 
 
     @media (max-width: 1080px) {
       padding: 200px 100px;
@@ -118,6 +120,7 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     color: ${theme.colors.text.header};
+    line-height: ${theme.lineHeights.heading};
   }
 
   video[autoplay]:not([muted]) {

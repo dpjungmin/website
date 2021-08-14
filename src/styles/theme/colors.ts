@@ -202,6 +202,35 @@ const colors = {
     copyButton: palette.grey[60],
     lineHighlightBackground: "#fbf0ea",
     scrollbarTrack: "#faede5",
+    titleBackground: "#fdfaf6",
+    title: "#866c5b",
+    titleBorder: "#faede5",
+  },
+  languageBadge: {
+    js: {
+      bg: palette.yellow[40],
+      text: palette.grey[80],
+    },
+    jsx: {
+      bg: palette.blue[30],
+      text: palette.grey[80],
+    },
+    json: {
+      bg: palette.lime[40],
+      text: palette.grey[80],
+    },
+    c: {
+      bg: palette.magenta[40],
+      text: palette.grey[5],
+    },
+    cpp: {
+      bg: palette.magenta[60],
+      text: palette.grey[5],
+    },
+    rust: {
+      bg: palette.yellow[80],
+      text: palette.grey[5],
+    },
   },
 }
 

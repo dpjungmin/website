@@ -14,7 +14,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
-      <$.Container className="fillHeight">
+      <$.Container className="container fillHeight">
         <$.Hero>
           <h1>Hi I'm David, and this is my blog.</h1>
           <p>This website is under construction.</p>

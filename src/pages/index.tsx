@@ -12,7 +12,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
   return (
     <Layout location={location}>
       <SEO />
-      <$.Container className="fillHeight">
+      <$.Container className="container fillHeight">
         <Hero />
 
         {/* <a

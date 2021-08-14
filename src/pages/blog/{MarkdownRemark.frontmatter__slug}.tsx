@@ -2,6 +2,7 @@ import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import { Layout } from "@components"
+import * as $ from "@styles/pages/blog/post.styles"
 
 interface PostTemplateProps {
   readonly location: WindowLocation
@@ -24,8 +25,10 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
 
   return (
     <Layout location={location}>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <$.Container>
+        <$.Title>{title}</$.Title>
+        <$.Article dangerouslySetInnerHTML={{ __html: html }} />
+      </$.Container>
     </Layout>
   )
 }
