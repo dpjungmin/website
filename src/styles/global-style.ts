@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${theme.fontSizes.lg};
     font-family: ${theme.fonts.OpenSans}; 
     -webkit-font-smoothing: antialiased;
+    transition: all ${theme.transition.default};
     overflow-x: hidden;
 
     @media (max-width: ${theme.breakpoints.phablet}) {
@@ -98,7 +99,9 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    transition: all 100ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    transition-property: all;
+    transition-duration: ${theme.transition.speed.fast};
+    transition-timing-function: ${theme.transition.curve.default};
     color: ${theme.colors.link.color};
     border-bottom: 1px solid ${theme.colors.link.border};
 
@@ -140,6 +143,17 @@ const GlobalStyle = createGlobalStyle`
   li,
   ul {
     list-style: none;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    color: ${theme.colors.svg.color};
+
+    &:hover {
+      color: ${theme.colors.svg.hover};
+    }
   }
 `
 

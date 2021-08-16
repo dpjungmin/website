@@ -1,4 +1,4 @@
-type TransitionToken = "default" | "curve" | "speed"
+// type TransitionToken = "default" | "curve" | "speed"
 type CurveToken = "default" | "fastOutLinearIn"
 type SpeedToken = "faster" | "fast" | "default" | "slow" | "slower"
 
@@ -22,3 +22,5 @@ const transition: Transition = {
     slower: "1000ms",
   },
 }
+
+export { transition }
