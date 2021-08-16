@@ -182,6 +182,10 @@ const colors = {
     focusBorder: palette.orange[40],
     focusBoxShadow: palette.orange[20],
   },
+  svg: {
+    color: palette.purple[40],
+    hover: palette.purple[50],
+  },
   code: {
     bgInline: "#fbf2e9",
     bg: "#fdfaf6",

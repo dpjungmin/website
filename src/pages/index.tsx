@@ -14,7 +14,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
       <SEO />
       <$.Container className="container fillHeight">
         <Hero />
-
         {/* <a
           target="_blank"
           rel="noopener noreferrer"
