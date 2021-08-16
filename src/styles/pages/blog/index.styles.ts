@@ -18,11 +18,6 @@ export const Hero = styled.div`
 export const Articles = styled.div`
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.heading};
-
-    span {
-      font-size: ${({ theme }) => theme.fontSizes.lg};
-      color: ${({ theme }) => theme.colors.grey[60]};
-    }
   }
 
   div {

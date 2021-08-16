@@ -20,9 +20,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
           <p>This website is under construction.</p>
         </$.Hero>
         <$.Articles>
-          <h1>
-            Articles <span>(markdown copied from gatsby for testing)</span>
-          </h1>
+          <h1>Articles</h1>
           {nodes.map(({ id, frontmatter: { title, slug } }) => {
             console.log(slug)
             return (

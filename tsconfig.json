@@ -18,6 +18,7 @@
 
     "baseUrl": "./",
     "paths": {
+      "@config": ["./config"],
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
       "@context": ["./src/context"],

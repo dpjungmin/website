@@ -11,5 +11,5 @@ problems.
 
 If you happen to speak Korean, my Korean name is 박정민 (Park Jung Min).
 
-You can contact me via [Instagram](https://www.instagram.com/dpjungmin/) or
-[email](mailto:dpjungmin@gmail.com).
+
+You can contact me via [email](mailto:dpjungmin@gmail.com).

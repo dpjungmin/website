@@ -5,6 +5,7 @@ import { fontWeights } from "./font-weights"
 import { fonts } from "./fonts"
 import { letterSpacings } from "./letter-spacing"
 import { lineHeights } from "./line-heights"
+import { transition } from "./transition"
 import { zIndices } from "./z-indices"
 import { mixins } from "../mixins"
 
@@ -16,6 +17,7 @@ const theme = {
   fonts,
   letterSpacings,
   lineHeights,
+  transition,
   zIndices,
   mixins,
 }
