@@ -184,6 +184,14 @@ const GlobalStyle = createGlobalStyle`
       color: ${theme.colors.svg.hover};
     }
   }
+
+  /* For design page (MDX) */
+  ._colors {
+    svg {
+      width: 44px;
+      height: 44px;
+    }
+  }
 `
 
 export { GlobalStyle }

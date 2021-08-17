@@ -39,6 +39,10 @@ export const Article = styled.article`
   h6 {
   }
 
+  h1 {
+    font-size: ${({ theme }) => theme.fontSizes.heading};
+  }
+
   h2 {
     margin: 48px 0 24px;
   }

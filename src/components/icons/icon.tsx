@@ -15,12 +15,14 @@ import { IconTwitter } from "./twitter"
 import { MdCopyright } from "react-icons/md"
 import { IoRocketOutline } from "react-icons/io5"
 import { FiDownload } from "react-icons/fi"
+import { GiPlainCircle } from "react-icons/gi"
 
 interface IconProps {
   name: string
+  style?: any
 }
 
-const Icon: React.FC<IconProps> = ({ name }) => {
+const Icon: React.FC<IconProps> = ({ name, style = {} }) => {
   switch (name.toLowerCase()) {
     case "appstore":
       return <IconAppStore />
@@ -52,6 +54,8 @@ const Icon: React.FC<IconProps> = ({ name }) => {
       return <IoRocketOutline />
     case "download":
       return <FiDownload />
+    case "circle":
+      return <GiPlainCircle style={style} />
     default:
       throw new Error(`Invalid icon name: ${name}`)
   }
