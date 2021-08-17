@@ -5,11 +5,11 @@ export const Container = styled.main`
   margin: 0 auto;
   width: 100%;
   max-width: 700px;
-  min-height: 100vh;
-  padding: 248px 0;
+  min-height: calc(100vh - var(--nav-height) - var(--footer-height));
+  padding: 148px 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.post}) {
-    padding: 200px 14px;
+    padding: 100px 14px;
   }
 `
 

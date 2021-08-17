@@ -1,6 +1,7 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { ThemeProvider } from "styled-components"
+import { Nav, Footer } from "@components"
 import { GlobalStyle } from "@styles"
 import { theme } from "@theme"
 
@@ -9,13 +10,17 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
-  console.log(location)
+  const isHome = location.pathname == "/"
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div id="root">
-        <div id="content">{children}</div>
+        <div id="content">
+          <Nav isHome={isHome} />
+          {children}
+          <Footer />
+        </div>
       </div>
     </ThemeProvider>
   )

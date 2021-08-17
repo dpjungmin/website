@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const data = useStaticQuery(graphql`
     {
       hero: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/hero/" } }
+        filter: { fileAbsolutePath: { regex: "/_hero/" } }
       ) {
         edges {
           node {
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       <$.Text dangerouslySetInnerHTML={{ __html: html }} />
       <$.SocialMediaList>
         {socialMedia &&
-          socialMedia.map(({ name, url }, idx) => (
+          socialMedia.map(({ name, url }, idx: number) => (
             <li key={idx}>
               <a href={url} aria-label={name} target="_blank" rel="noreferrer">
                 <Icon name={name} />

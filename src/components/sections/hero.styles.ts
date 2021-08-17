@@ -7,6 +7,7 @@ export const Section = styled.section`
   align-items: flex-start;
   min-height: 100vh;
   padding: 0;
+  padding-top: 100px;
 
   h1 {
     font-size: 4.5em;

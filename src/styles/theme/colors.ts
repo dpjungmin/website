@@ -166,6 +166,14 @@ const colors = {
       subtle: palette.grey[20],
     },
   },
+  selection: {
+    background: palette.purple[40],
+    color: palette.purple[5],
+  },
+  logo: {
+    color: palette.purple[60],
+    hoverFill: "rgba(102, 51, 153, 0.1)",
+  },
   link: {
     color: palette.purple[50],
     border: palette.purple[30],
@@ -176,6 +184,12 @@ const colors = {
     primary: palette.grey[80],
     secondary: palette.grey[50],
     placeholder: palette.grey[40],
+  },
+  button: {
+    color: palette.white,
+    background: palette.purple[60],
+    border: palette.purple[60],
+    hoverBackground: palette.purple[70],
   },
   input: {
     border: palette.grey[30],

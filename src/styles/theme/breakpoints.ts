@@ -5,6 +5,7 @@ type BreakpointToken =
   | "desktop"
   | "hd"
   | "post"
+  | "nav"
 
 type Breakpoints = Record<BreakpointToken, string>
 
@@ -16,6 +17,8 @@ const breakpoints: Breakpoints = {
   hd: "1300px",
   // page specific breakpoints
   post: "720px",
+  // component specific breakpoints
+  nav: "768px",
 }
 
 export { breakpoints }

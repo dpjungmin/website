@@ -12,6 +12,10 @@ import { IconPlayStore } from "./playstore"
 import { IconStar } from "./star"
 import { IconTwitter } from "./twitter"
 
+import { MdCopyright } from "react-icons/md"
+import { IoRocketOutline } from "react-icons/io5"
+import { FiDownload } from "react-icons/fi"
+
 interface IconProps {
   name: string
 }
@@ -42,6 +46,12 @@ const Icon: React.FC<IconProps> = ({ name }) => {
       return <IconStar />
     case "twitter":
       return <IconTwitter />
+    case "copyright":
+      return <MdCopyright />
+    case "rocket":
+      return <IoRocketOutline />
+    case "download":
+      return <FiDownload />
     default:
       throw new Error(`Invalid icon name: ${name}`)
   }

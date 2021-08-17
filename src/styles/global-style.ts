@@ -15,6 +15,18 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  ::selection {
+    background-color: ${theme.colors.selection.background};
+    color: ${theme.colors.selection.color};
+  }
+
+  .focus-outline {
+    &:focus {
+      outline: 2px dashed ${theme.colors.dp};
+      outline-offset: 3px;
+    }
+  }
+
   html {    
     box-sizing: border-box;
     scrollbar-width: thin;
@@ -37,6 +49,21 @@ const GlobalStyle = createGlobalStyle`
     &.hidden {
       overflow: hidden;
     }
+
+    &.blur {
+      overflow: hidden;
+
+      header {
+        background-color: transparent;
+      }
+
+      #content > * {
+        filter: blur(5px) brightness(0.7);
+        transition: all ${theme.transition.default};
+        pointer-events: none;
+        user-select: none;
+      }
+    }
   }
 
   #root {
@@ -56,7 +83,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     width: 100%;
     max-width: 1600px;
-    min-height: 100vh;
     padding: 200px 150px; 
 
     @media (max-width: 1080px) {
@@ -105,7 +131,9 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.link.color};
     border-bottom: 1px solid ${theme.colors.link.border};
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       border-bottom-color: ${theme.colors.link.hoverBorder};
     }
   }
@@ -150,6 +178,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     vertical-align: middle;
     color: ${theme.colors.svg.color};
+    transition: all ${theme.transition.default};
 
     &:hover {
       color: ${theme.colors.svg.hover};

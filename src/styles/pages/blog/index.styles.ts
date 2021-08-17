@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.main`
-  /* max-width: 1200px; */
+  min-height: calc(100vh - var(--nav-height) - var(--footer-height));
 `
 
 export const Hero = styled.div`

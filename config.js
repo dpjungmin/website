@@ -15,4 +15,15 @@ module.exports = {
       url: "https://www.linkedin.com/in/dpjungmin/",
     },
   ],
+
+  navLinks: [
+    {
+      name: "About",
+      url: "/#about",
+    },
+    // {
+    //   name: "Work",
+    //   url: "/#projects",
+    // },
+  ],
 }
