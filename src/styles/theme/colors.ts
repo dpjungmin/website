@@ -200,6 +200,10 @@ const colors = {
     color: palette.purple[40],
     hover: palette.purple[50],
   },
+  footer: {
+    border: palette.purple[10],
+    text: palette.grey[50],
+  },
   code: {
     bgInline: "#fbf2e9",
     bg: "#fdfaf6",

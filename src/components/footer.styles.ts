@@ -7,6 +7,7 @@ export const Footer = styled.footer`
   min-height: var(--footer-height, 70px);
   padding: 15px;
   text-align: center;
+  border-top: 1px solid ${({ theme }) => theme.colors.footer.border};
 `
 
 export const SocialLinks = styled.div`
@@ -17,7 +18,7 @@ export const SocialLinks = styled.div`
     width: 100%;
     max-width: 270px;
     margin: 0 auto 10px;
-    color: ${({ theme }) => theme.colors.text.secondary};
+    color: ${({ theme }) => theme.colors.footer.text};
   }
 
   ul {
@@ -40,14 +41,14 @@ export const SocialLinks = styled.div`
 
 export const Credit = styled.div`
   display: flex;
-  color: ${({ theme }) => theme.colors.text.secondary};
+  color: ${({ theme }) => theme.colors.footer.text};
   font-family: var(--font-mono);
   font-size: ${({ theme }) => theme.fontSizes.xs};
   line-height: ${({ theme }) => theme.lineHeights.solid};
   margin-top: 10px;
 
   svg {
-    color: ${({ theme }) => theme.colors.text.secondary};
+    color: ${({ theme }) => theme.colors.footer.text};
     width: 14px;
     height: 14px;
     margin-right: 5px;
@@ -56,6 +57,6 @@ export const Credit = styled.div`
 
 export const Rss = styled.div`
   margin-top: 4px;
-  color: ${({ theme }) => theme.colors.text.secondary};
+  color: ${({ theme }) => theme.colors.footer.text};
   font-size: ${({ theme }) => theme.fontSizes.xs};
 `
