@@ -23,6 +23,8 @@
       "@components/*": ["./src/components/*"],
       "@context": ["./src/context"],
       "@context/*": ["./src/context/*"],
+      "@images": ["./src/images"],
+      "@images/*": ["./src/images/*"],
       "@styles": ["./src/styles"],
       "@styles/*": ["./src/styles/*"],
       "@theme": ["./src/styles/theme"],
