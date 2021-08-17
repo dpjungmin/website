@@ -1,7 +1,7 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { graphql, Link } from "gatsby"
-import { Layout } from "@components"
+import { Layout, SEO } from "@components"
 import * as $ from "@styles/pages/blog/index.styles"
 
 interface BlogPageProps {
@@ -14,6 +14,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
 
   return (
     <Layout location={location}>
+      <SEO title="Blog" />
       <$.Container className="container fillHeight">
         <$.Hero>
           <h1>Hi I'm David, and this is my blog.</h1>
