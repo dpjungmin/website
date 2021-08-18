@@ -30,11 +30,11 @@ const Nav: React.FC<NavProps> = ({ isHome }) => {
     <div className="logo" tabIndex={-1}>
       {isHome ? (
         <a href="/" aria-label="home">
-          <Icon name="rocket" />
+          <Icon name="logo" />
         </a>
       ) : (
         <Link to="/" aria-label="home">
-          <Icon name="rocket" />
+          <Icon name="logo" />
         </Link>
       )}
     </div>

@@ -1,4 +1,5 @@
 import React from "react"
+
 import { IconAppStore } from "./appstore"
 import { IconBookmark } from "./bookmark"
 import { IconExternal } from "./external"
@@ -11,6 +12,11 @@ import { IconLoader } from "./loader"
 import { IconPlayStore } from "./playstore"
 import { IconStar } from "./star"
 import { IconTwitter } from "./twitter"
+
+import { Logo } from "./logo"
+import { JellyPpi } from "./jellyppi"
+import { JellyPpi2 } from "./jellyppi2"
+import { JellyPpi3 } from "./jellyppi3"
 
 import { MdCopyright, MdRssFeed } from "react-icons/md"
 import { IoRocketOutline } from "react-icons/io5"
@@ -48,6 +54,14 @@ const Icon: React.FC<IconProps> = ({ name, style = {} }) => {
       return <IconStar />
     case "twitter":
       return <IconTwitter />
+    case "logo":
+      return <Logo />
+    case "jellyppi":
+      return <JellyPpi />
+    case "jellyppi2":
+      return <JellyPpi2 />
+    case "jellyppi3":
+      return <JellyPpi3 />
     case "copyright":
       return <MdCopyright />
     case "rocket":

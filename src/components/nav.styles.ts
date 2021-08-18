@@ -74,8 +74,8 @@ export const Nav = styled.nav`
 
     a {
       color: ${({ theme }) => theme.colors.logo.color};
-      width: 42px;
-      height: 42px;
+      width: 84px;
+      height: 84px;
 
       &:hover,
       &:focus {
@@ -85,6 +85,7 @@ export const Nav = styled.nav`
       }
 
       svg {
+        transform: translateX(-10px);
         fill: none;
         user-select: none;
       }

@@ -18,7 +18,6 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
       <$.Container>
         <$.Hero>
           <h1>Hi I'm David, and this is my blog.</h1>
-          <p>This website is under construction.</p>
         </$.Hero>
         <$.Articles>
           <h1>Articles</h1>
