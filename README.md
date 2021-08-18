@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/dpjungmin/website/main/src/images/icon.png" style="height: 100px" />
+  <img alt="Logo" src="https://raw.githubusercontent.com/dpjungmin/website/main/src/images/icon.png" style="width: 100px;" />
 </div>
 
 <h1 align="center">
