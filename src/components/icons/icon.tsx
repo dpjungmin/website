@@ -12,7 +12,7 @@ import { IconPlayStore } from "./playstore"
 import { IconStar } from "./star"
 import { IconTwitter } from "./twitter"
 
-import { MdCopyright } from "react-icons/md"
+import { MdCopyright, MdRssFeed } from "react-icons/md"
 import { IoRocketOutline } from "react-icons/io5"
 import { FiDownload } from "react-icons/fi"
 import { GiPlainCircle } from "react-icons/gi"
@@ -56,6 +56,8 @@ const Icon: React.FC<IconProps> = ({ name, style = {} }) => {
       return <FiDownload />
     case "circle":
       return <GiPlainCircle style={style} />
+    case "rss":
+      return <MdRssFeed />
     default:
       throw new Error(`Invalid icon name: ${name}`)
   }

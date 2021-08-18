@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
         <Icon name="copyright" /> {new Date().getFullYear()} David Park
       </$.Credit>
       <$.Rss>
-        Subscribe to blog{" "}
+        Subscribe to blog via{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.feedspot.com/infiniterss.php?q=site:https://dpjungmin.gatsbyjs.io/rss.xml"
         >
-          via RSS
+          RSS <Icon name="rss" />
         </a>
       </$.Rss>
     </$.Footer>

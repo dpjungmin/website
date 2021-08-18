@@ -59,4 +59,16 @@ export const Rss = styled.div`
   margin-top: 4px;
   color: ${({ theme }) => theme.colors.footer.text};
   font-size: ${({ theme }) => theme.fontSizes.xs};
+
+  a {
+    color: ${({ theme }) => theme.colors.footer.rss};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.footer.rss};
+
+    svg {
+      width: 14px;
+      height: 14px;
+      transform: translate(-1px, -1.5px);
+      color: ${({ theme }) => theme.colors.footer.rss};
+    }
+  }
 `

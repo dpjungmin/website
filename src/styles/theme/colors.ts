@@ -203,6 +203,7 @@ const colors = {
   footer: {
     border: palette.purple[10],
     text: palette.grey[50],
+    rss: palette.orange[60],
   },
   code: {
     bgInline: "#fbf2e9",
