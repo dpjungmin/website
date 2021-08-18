@@ -5,6 +5,7 @@ const gatsbyPluginMdx = require("./plugins/mdx")
 const gatsbyTransformerRemark = require("./plugins/remark")
 const gatsbyPluginFeed = require("./plugins/rss-feed")
 const gatsbyPluginManifest = require("./plugins/pwa")
+const gatsbyPluginGoogleTagManager = require("./plugins/google-tag-manager")
 
 module.exports = {
   siteMetadata: {
@@ -26,6 +27,7 @@ module.exports = {
     gatsbyPluginMdx,
     gatsbyTransformerRemark,
     gatsbyPluginFeed,
+    gatsbyPluginGoogleTagManager,
     gatsbyPluginManifest,
     // `gatsby-plugin-offline` must come after `gatsby-plugin-manifest`
     "gatsby-plugin-offline",
