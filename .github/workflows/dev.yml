@@ -1,4 +1,4 @@
-name: Development Workflow
+name: Dev Workflow
 
 on:
   push:
@@ -24,3 +24,5 @@ jobs:
 
       - name: Build project
         run: npm run build
+      
+      # @todo: Add tests/reports and create PR
