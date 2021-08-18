@@ -5,18 +5,18 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding: 100px 120px;
+  padding: 140px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.hd}) {
-    padding: 100px 60px;
+    padding: 120px 60px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    padding: 80px 30px;
+    padding: 100px 30px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    padding: 40px 0;
+    padding: 80px 0;
   }
 
   h1 {
@@ -38,6 +38,12 @@ export const Section = styled.section`
 `
 
 export const Text = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.xl};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes.lg};
+  }
+
   p {
     margin-bottom: 14px;
   }

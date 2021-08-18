@@ -29,7 +29,7 @@ const variables = css`
       transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 
     /* Sidebar  */
-    --sidebar-background: ${theme.colors.purple[10]};
+    --sidebar-background: ${theme.colors.purple[20]};
     --sidebar-box-shadow: -10px 0px 30px -15px ${theme.colors.purple[30]};
   }
 `
