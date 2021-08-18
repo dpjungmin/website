@@ -62,7 +62,14 @@ export const Rss = styled.div`
 
   a {
     color: ${({ theme }) => theme.colors.footer.rss};
-    border-bottom: 1px solid ${({ theme }) => theme.colors.footer.rss};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.footer.rssBorder};
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom: 1px solid
+        ${({ theme }) => theme.colors.footer.rssBorderHover};
+    }
 
     svg {
       width: 14px;

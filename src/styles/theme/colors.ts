@@ -204,6 +204,8 @@ const colors = {
     border: palette.purple[10],
     text: palette.grey[50],
     rss: palette.orange[60],
+    rssBorder: palette.orange[50],
+    rssBorderHover: palette.orange[70],
   },
   code: {
     bgInline: "#fbf2e9",
