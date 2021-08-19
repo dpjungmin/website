@@ -12,7 +12,9 @@ interface PostTemplateProps {
       html: string
       excerpt: string
       frontmatter: {
+        date: string
         title: string
+        description: string
       }
     }
   }
@@ -29,14 +31,16 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   const {
     html,
     excerpt,
-    frontmatter: { title },
+    frontmatter: { title, description, date },
   } = data.markdownRemark
 
   return (
     <Layout location={location}>
-      <SEO title={title} description={excerpt} />
+      <SEO title={title} description={description || excerpt} />
       <$.Container>
-        <$.Title>{title}</$.Title>
+        <$.Title>
+          {title} <span>{date}</span>
+        </$.Title>
         <$.Article dangerouslySetInnerHTML={{ __html: html }} />
       </$.Container>
     </Layout>
@@ -48,8 +52,11 @@ const query = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       excerpt
+      tableOfContents(absolute: false, maxDepth: 2)
       frontmatter {
+        date(formatString: "MMMM DD, YYYY")
         title
+        description
       }
     }
   }

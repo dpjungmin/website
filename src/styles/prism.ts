@@ -15,6 +15,22 @@ const prism = css`
     }
   }
 
+  blockquote {
+    background-color: ${({ theme }) => theme.colors.blockquote.background};
+    border-left-style: solid;
+    border-left-width: 5px;
+    border-left-color: ${({ theme }) => theme.colors.blockquote.border};
+    margin: 1em 0;
+    padding: 10px;
+    border-radius: var(--border-radius, 4px);
+
+    p {
+      color: ${({ theme }) => theme.colors.blockquote.text};
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
+
   /**
    * Add back the container background-color, border-radius, padding, margin
    * and overflow that we removed from <pre>.
@@ -101,8 +117,8 @@ const prism = css`
 
   .gatsby-highlight pre[class*="language-"]::before {
     border-radius: 0 0 4px 4px;
-    background: black;
-    color: white;
+    background: ${({ theme }) => theme.colors.grey[30]};
+    color: ${({ theme }) => theme.colors.grey[90]};
     font-size: ${({ theme }) => theme.fontSizes.sm};
     font-family: ${({ theme }) => theme.fonts.FiraCode};
     letter-spacing: ${({ theme }) => theme.letterSpacings.tracked};

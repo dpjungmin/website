@@ -4,7 +4,7 @@ export const Footer = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   height: auto;
-  min-height: var(--footer-height, 70px);
+  min-height: var(--footer-height, 80px);
   padding: 15px;
   text-align: center;
   border-top: 1px solid ${({ theme }) => theme.colors.footer.border};

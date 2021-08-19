@@ -6,7 +6,18 @@ import * as $ from "@styles/pages/blog/index.styles"
 
 interface BlogPageProps {
   readonly location: WindowLocation
-  data: any
+  data: {
+    allMarkdownRemark: {
+      nodes: {
+        id: string
+        frontmatter: {
+          date: string
+          title: string
+          slug: string
+        }
+      }[]
+    }
+  }
 }
 
 const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
@@ -21,14 +32,16 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
         </$.Hero>
         <$.Articles>
           <h1>Articles</h1>
-          {nodes.map(({ id, frontmatter: { title, slug } }) => {
-            console.log(slug)
-            return (
-              <div key={id}>
-                <Link to={`/blog/${slug}`}>{title}</Link>
-              </div>
-            )
-          })}
+          <$.Wrapper>
+            {nodes.map(({ id, frontmatter: { title, slug, date } }) => {
+              return (
+                <$.Article key={id}>
+                  <Link to={`/blog/${slug}`}>{title}</Link>
+                  <span>{date}</span>
+                </$.Article>
+              )
+            })}
+          </$.Wrapper>
         </$.Articles>
       </$.Container>
     </Layout>
@@ -37,11 +50,15 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
 
 const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       totalCount
       nodes {
         id
         frontmatter {
+          date(formatString: "MMMM DD, YYYY")
           title
           slug
         }

@@ -184,6 +184,7 @@ const colors = {
     primary: palette.grey[80],
     secondary: palette.grey[50],
     placeholder: palette.grey[40],
+    underline: palette.grey[40],
   },
   button: {
     color: palette.white,
@@ -206,6 +207,11 @@ const colors = {
     rss: palette.orange[60],
     rssBorder: palette.orange[50],
     rssBorderHover: palette.orange[70],
+  },
+  blockquote: {
+    background: palette.orange[10],
+    border: palette.orange[30],
+    text: palette.grey[60],
   },
   code: {
     bgInline: "#fbf2e9",
@@ -234,26 +240,26 @@ const colors = {
   languageBadge: {
     js: {
       bg: palette.yellow[40],
-      text: palette.grey[80],
+      text: palette.grey[90],
     },
     jsx: {
-      bg: palette.blue[30],
-      text: palette.grey[80],
+      bg: palette.blue[20],
+      text: palette.grey[90],
     },
     json: {
       bg: palette.lime[40],
-      text: palette.grey[80],
+      text: palette.grey[90],
     },
     c: {
+      bg: palette.magenta[20],
+      text: palette.grey[90],
+    },
+    cpp: {
       bg: palette.magenta[40],
       text: palette.grey[5],
     },
-    cpp: {
-      bg: palette.magenta[60],
-      text: palette.grey[5],
-    },
     rust: {
-      bg: palette.yellow[80],
+      bg: palette.yellow[70],
       text: palette.grey[5],
     },
   },

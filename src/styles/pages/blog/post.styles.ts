@@ -14,12 +14,21 @@ export const Container = styled.main`
 `
 
 export const Title = styled.h1`
+  display: flex;
+  flex-direction: column;
   font-size: ${({ theme }) => theme.fontSizes.heading};
   line-height: ${({ theme }) => theme.lineHeights.heading};
-  margin: 0 0 1.45rem;
+  margin: 0;
+
+  span {
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    color: ${({ theme }) => theme.colors.text.secondary};
+    margin-top: 10px;
+  }
 `
 
 export const Article = styled.article`
+  padding-top: 60px;
   font-size: ${({ theme }) => theme.fontSizes.lg};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.post}) {
@@ -29,6 +38,15 @@ export const Article = styled.article`
   p {
     line-height: ${({ theme }) => theme.lineHeights.loose};
     margin: 0 0 1.5rem;
+  }
+
+  u {
+    text-underline-offset: 5px;
+    text-decoration-color: ${({ theme }) => theme.colors.text.underline};
+
+    &:hover {
+      text-decoration-color: ${({ theme }) => theme.colors.text.secondary};
+    }
   }
 
   h1,

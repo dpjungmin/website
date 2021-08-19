@@ -10,7 +10,7 @@ const variables = css`
 
     /* Common */
     --border-radius: 4px;
-    --footer-height: 70px;
+    --footer-height: 80px;
 
     /* Navigation bar */
     --nav-height: 100px;
