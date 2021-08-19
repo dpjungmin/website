@@ -174,6 +174,11 @@ const colors = {
     color: palette.purple[60],
     hoverFill: "rgba(102, 51, 153, 0.1)",
   },
+  socialMediaIcon: {
+    fill: palette.orange[10],
+    color: palette.orange[50],
+    colorHover: palette.orange[60],
+  },
   link: {
     color: palette.purple[50],
     border: palette.purple[30],

@@ -9,9 +9,10 @@ everything I learn.
 
 I'm currently building my website, so things may appear incomplete 😅.
 
-You can check out the design system for this website [here](/design). I have
-mostly referenced [Gatsby's](gatsby) design system.
+You can check out the design system for this website [here][design]. I have
+mostly referenced [Gatsby's][gatsby] design system.
 
 See you again!
 
+[design]: /design
 [gatsby]: https://www.gatsbyjs.com/

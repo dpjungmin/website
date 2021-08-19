@@ -34,6 +34,7 @@ export const SocialLinks = styled.div`
       svg {
         width: 20px;
         height: 20px;
+        fill: ${({ theme }) => theme.colors.purple[10]};
       }
     }
   }

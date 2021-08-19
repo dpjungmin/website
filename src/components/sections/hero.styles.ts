@@ -47,10 +47,12 @@ export const SocialMediaList = styled.ul`
 
     a {
       padding: 12px;
+      border: none;
+      /* border: 1px dashed ${({ theme }) => theme.colors.orange[40]}; */
     }
 
     &:not(:last-child) {
-      margin-right: 8px;
+      margin-right: 12px;
     }
 
     &:hover,
@@ -58,13 +60,15 @@ export const SocialMediaList = styled.ul`
       transform: translateY(-3px);
 
       svg {
-        color: ${({ theme }) => theme.colors.svg.hover};
+        color: ${({ theme }) => theme.colors.socialMediaIcon.colorHover};
       }
     }
 
     svg {
-      width: 22px;
-      height: 22px;
+      color: ${({ theme }) => theme.colors.socialMediaIcon.color};
+      fill: ${({ theme }) => theme.colors.socialMediaIcon.fill};
+      width: 24px;
+      height: 24px;
     }
   }
 `
