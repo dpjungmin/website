@@ -43,6 +43,7 @@
     "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-sitemap": "^4.6.0",
     "gatsby-plugin-styled-components": "^4.9.0",
+    "gatsby-remark-code-buttons": "^2.0.7",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^5.8.0",

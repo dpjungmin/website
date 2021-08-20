@@ -30,6 +30,34 @@ module.exports = {
         },
       }, // IMPORTANT: this must be ahead of other plugins that use code blocks
       {
+        resolve: "gatsby-remark-code-buttons",
+        options: {
+          // Optional button container class name. Defaults
+          // to 'gatsby-code-button-container'.
+          buttonContainerClass: `gatsby-code-button-container`,
+          // Optional button class name. Defaults to 'gatsby-code-button'.
+          buttonClass: `gatsby-code-button`,
+          // Optional button text. Defaults to ''.
+          buttonText: `Copy`,
+          // Optional svg icon class name. Defaults to 'gatsby-code-button-icon'.
+          svgIconClass: `gatsby-code-button-icon`,
+          // Optional svg icon. Defaults to svg string and can be
+          // replaced with any other valid svg. Use custom classes
+          // in the svg string and skip `iconClass` option.
+          svgIcon: ``,
+          // Optional tooltip text. Defaults to ''.
+          tooltipText: ``,
+          // Optional toaster class name. Defaults to ''.
+          toasterClass: ``,
+          // Optional toaster text class name. Defaults to ''.
+          toasterTextClass: ``,
+          // Optional toaster text. Defaults to ''.
+          toasterText: "",
+          // Optional toaster duration. Defaults to 3500.
+          toasterDuration: 0,
+        },
+      },
+      {
         resolve: `gatsby-remark-prismjs`,
         options: {
           // Class prefix for <pre> tags containing syntax highlighting;

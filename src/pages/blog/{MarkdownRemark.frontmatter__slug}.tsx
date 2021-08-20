@@ -28,6 +28,20 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   // console.log("pageContext", pageContext)
   // console.log("data", data)
 
+  React.useEffect(() => {
+    const codeCopyButtons = document.querySelectorAll(".gatsby-code-button")
+
+    for (const button of codeCopyButtons) {
+      button.addEventListener("click", (e: any) => {
+        e.preventDefault()
+        e.target.innerHTML = "Copied"
+        setTimeout(() => {
+          e.target.innerHTML = "Copy"
+        }, 1500)
+      })
+    }
+  }, [])
+
   const {
     html,
     excerpt,
