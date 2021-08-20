@@ -218,6 +218,10 @@ const colors = {
     border: palette.orange[30],
     text: palette.grey[60],
   },
+  copyButton: {
+    color: palette.grey[50],
+    colorHover: palette.purple[5],
+  },
   code: {
     bgInline: "#fbf2e9",
     bg: "#fdfaf6",

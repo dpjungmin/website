@@ -113,6 +113,38 @@ const prism = css`
     border-top-right-radius: 0.3em;
   }
 
+  /*****  Code copy button  *****/
+
+  .gatsby-code-button-container {
+    position: relative;
+  }
+
+  .gatsby-code-button {
+    position: absolute;
+    ${({ theme }) => theme.mixins.button};
+    border: none;
+    padding: 8px;
+    transform: translateY(-20px);
+    background-color: transparent;
+    color: ${({ theme }) => theme.colors.copyButton.color};
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+
+    &:hover,
+    &:focus {
+      color: ${({ theme }) => theme.colors.copyButton.colorHover};
+    }
+  }
+
+  .gatsby-code-button-icon {
+    display: none;
+  }
+
+  .gatsby-code-button-toaster {
+  }
+
+  .gatsby-code-button-toaster-text {
+  }
+
   /*****  Language badges  *****/
 
   .gatsby-highlight pre[class*="language-"]::before {
