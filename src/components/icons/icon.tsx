@@ -29,52 +29,31 @@ interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({ name, style = {} }) => {
-  switch (name.toLowerCase()) {
-    case "appstore":
-      return <IconAppStore />
-    case "bookmark":
-      return <IconBookmark />
-    case "external":
-      return <IconExternal />
-    case "folder":
-      return <IconFolder />
-    case "fork":
-      return <IconFork />
-    case "github":
-      return <IconGitHub />
-    case "instagram":
-      return <IconInstagram />
-    case "linkedin":
-      return <IconLinkedIn />
-    case "loader":
-      return <IconLoader />
-    case "playstore":
-      return <IconPlayStore />
-    case "star":
-      return <IconStar />
-    case "twitter":
-      return <IconTwitter />
-    case "logo":
-      return <Logo />
-    case "jellyppi":
-      return <JellyPpi />
-    case "jellyppi2":
-      return <JellyPpi2 />
-    case "jellyppi3":
-      return <JellyPpi3 />
-    case "copyright":
-      return <MdCopyright />
-    case "rocket":
-      return <IoRocketOutline />
-    case "download":
-      return <FiDownload />
-    case "circle":
-      return <GiPlainCircle style={style} />
-    case "rss":
-      return <MdRssFeed />
-    default:
-      throw new Error(`Invalid icon name: ${name}`)
+  const icons = {
+    appstore: <IconAppStore />,
+    bookmark: <IconBookmark />,
+    external: <IconExternal />,
+    folder: <IconFolder />,
+    fork: <IconFork />,
+    github: <IconGitHub />,
+    instagram: <IconInstagram />,
+    linkedin: <IconLinkedIn />,
+    loader: <IconLoader />,
+    playstore: <IconPlayStore />,
+    star: <IconStar />,
+    twitter: <IconTwitter />,
+    logo: <Logo />,
+    jellyppi: <JellyPpi />,
+    jellyppi2: <JellyPpi2 />,
+    jellyppi3: <JellyPpi3 />,
+    copyright: <MdCopyright />,
+    rocket: <IoRocketOutline />,
+    download: <FiDownload />,
+    circle: <GiPlainCircle style={style} />,
+    rss: <MdRssFeed />,
   }
+
+  return icons[name.toLowerCase()] ?? new Error(`Invalid icon name: ${name}`)
 }
 
 export { Icon }
