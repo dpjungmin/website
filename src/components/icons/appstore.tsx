@@ -1,6 +1,6 @@
 import React from "react"
 
-const IconAppStore = () => (
+const IconAppStore: React.FC = () => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

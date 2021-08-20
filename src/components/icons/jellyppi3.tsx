@@ -1,6 +1,6 @@
 import React from "react"
 
-const JellyPpi3 = () => (
+const JellyPpi3: React.FC = () => (
   <svg
     version="1.1"
     id="Layer_1"

@@ -51,7 +51,7 @@ const LogoSvg = styled.svg`
   }
 `
 
-const Logo = () => (
+const Logo: React.FC = () => (
   <LogoSvg
     version="1.1"
     id="Layer_1"
