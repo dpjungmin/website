@@ -1,6 +1,6 @@
 import React from "react"
 
-const IconFork = () => (
+const IconFork: React.FC = () => (
   <svg
     viewBox="0 0 24 24"
     fill="none"

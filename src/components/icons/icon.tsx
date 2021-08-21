@@ -23,13 +23,38 @@ import { IoRocketOutline } from "react-icons/io5"
 import { FiDownload } from "react-icons/fi"
 import { GiPlainCircle } from "react-icons/gi"
 
+type IconToken =
+  | "appstore"
+  | "bookmark"
+  | "external"
+  | "folder"
+  | "fork"
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "loader"
+  | "playstore"
+  | "star"
+  | "twitter"
+  | "logo"
+  | "jellyppi"
+  | "jellyppi2"
+  | "jellyppi3"
+  | "copyright"
+  | "rocket"
+  | "download"
+  | "circle"
+  | "rss"
+
+type Icons = Record<IconToken, React.ReactNode>
+
 interface IconProps {
   name: string
   style?: any
 }
 
 const Icon: React.FC<IconProps> = ({ name, style = {} }) => {
-  const icons = {
+  const icons: Icons = {
     appstore: <IconAppStore />,
     bookmark: <IconBookmark />,
     external: <IconExternal />,

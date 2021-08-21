@@ -1,6 +1,6 @@
 import React from "react"
 
-const IconExternal = () => (
+const IconExternal: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     role="img"
