@@ -21,6 +21,7 @@ export const Title = styled.h1`
   margin: 0;
 
   span {
+    font-family: var(--font-mono);
     font-size: ${({ theme }) => theme.fontSizes.md};
     color: ${({ theme }) => theme.colors.text.secondary};
     margin-top: 10px;
