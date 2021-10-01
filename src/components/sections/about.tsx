@@ -39,7 +39,7 @@ const About: React.FC = () => {
     <$.Section id="about">
       <h1>About me</h1>
       <$.Text dangerouslySetInnerHTML={{ __html: html }} />
-      {ResumeLink}
+      {/* {ResumeLink} */}
     </$.Section>
   )
 }
