@@ -24,16 +24,16 @@ const About: React.FC = () => {
 
   const { html } = data.hero.edges[0].node
 
-  const ResumeLink = (
-    <a
-      className="resume-button"
-      href="/resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Resume <Icon name="download" />
-    </a>
-  )
+  // const ResumeLink = (
+  //   <a
+  //     className="resume-button"
+  //     href="/resume.pdf"
+  //     target="_blank"
+  //     rel="noopener noreferrer"
+  //   >
+  //     Resume <Icon name="download" />
+  //   </a>
+  // )
 
   return (
     <$.Section id="about">
