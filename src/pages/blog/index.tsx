@@ -1,6 +1,6 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Layout, SEO } from "@components"
 import * as $ from "@styles/pages/blog/index.styles"
 
@@ -32,16 +32,16 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
         </$.Hero>
         <$.Articles>
           <h1>Articles</h1>
-          <$.Wrapper>
+          <$.ArticleWrapper>
             {nodes.map(({ id, frontmatter: { title, slug, date } }) => {
               return (
-                <$.Article key={id}>
-                  <Link to={`/blog/${slug}`}>{title}</Link>
+                <$.Article key={id} to={`/blog/${slug}`}>
+                  <p>{title}</p>
                   <span>{date}</span>
                 </$.Article>
               )
             })}
-          </$.Wrapper>
+          </$.ArticleWrapper>
         </$.Articles>
       </$.Container>
     </Layout>

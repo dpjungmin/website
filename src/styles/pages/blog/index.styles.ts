@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const Container = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -35,26 +36,32 @@ export const Articles = styled.div`
   }
 `
 
-export const Wrapper = styled.div`
-  padding-top: 24px;
+export const ArticleWrapper = styled.div`
+  padding: 24px 0;
 `
 
-export const Article = styled.div`
+export const Article = styled(Link)`
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+  margin: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  color: ${({ theme }) => theme.colors.text.primary};
+  border-bottom: none;
 
-  a {
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: rgb(0 0 0 / 8%) 0px 12px 20px 0px;
+  }
+
+  p {
     color: ${({ theme }) => theme.colors.text.primary};
     font-weight: ${({ theme }) => theme.fontWeights.semiBold};
     padding-bottom: 3px;
     border-bottom: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: ${({ theme }) => theme.colors.link.color};
-    }
   }
 
   span {
