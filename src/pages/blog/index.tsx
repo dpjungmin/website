@@ -2,6 +2,7 @@ import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { graphql } from "gatsby"
 import { Layout, SEO } from "@components"
+import { Icon } from "@components/icons"
 import * as $ from "@styles/pages/blog/index.styles"
 
 interface BlogPageProps {
@@ -43,6 +44,9 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
             })}
           </$.ArticleWrapper>
         </$.Articles>
+        <$.Flex>
+          <Icon name="jellyppi2" />
+        </$.Flex>
       </$.Container>
     </Layout>
   )

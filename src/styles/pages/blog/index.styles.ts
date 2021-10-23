@@ -29,6 +29,7 @@ export const Hero = styled.div`
 export const Articles = styled.div`
   align-items: flex-start;
   width: 100%;
+  min-height: 40vh;
 
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.heading};
@@ -69,5 +70,12 @@ export const Article = styled(Link)`
     font-size: ${({ theme }) => theme.fontSizes.sm};
     color: ${({ theme }) => theme.colors.text.secondary};
     margin-right: 5px;
+  }
+`
+
+export const Flex = styled.div`
+  svg {
+    height: 168px;
+    width: 168px;
   }
 `
