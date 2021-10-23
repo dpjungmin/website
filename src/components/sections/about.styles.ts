@@ -6,6 +6,8 @@ export const Section = styled.section`
   align-items: flex-start;
   width: 100%;
   padding: 140px;
+  font-size: calc(10px + 0.33vw);
+  min-height: 80vh;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.hd}) {
     padding: 120px 60px;
@@ -20,6 +22,7 @@ export const Section = styled.section`
   }
 
   h1 {
+    font-size: 2.2em;
     margin-bottom: 32px;
     color: ${({ theme }) => theme.colors.dp};
   }
@@ -38,11 +41,7 @@ export const Section = styled.section`
 `
 
 export const Text = styled.div`
-  font-size: ${({ theme }) => theme.fontSizes.xl};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: ${({ theme }) => theme.fontSizes.lg};
-  }
+  font-size: 1.4em;
 
   p {
     margin-bottom: 14px;
