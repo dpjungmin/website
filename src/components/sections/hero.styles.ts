@@ -25,7 +25,7 @@ export const Section = styled.section`
     font-size: 1.6em;
     font-weight: 400;
     line-height: 1.4;
-    max-width: 28em;
+    max-width: 32em;
     margin-top: 14px;
   }
 `
