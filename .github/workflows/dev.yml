@@ -18,7 +18,7 @@ jobs:
       - name: Enable node version 14.x
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
 
       - name: Cache node modules
         uses: actions/cache@v2
@@ -27,16 +27,18 @@ jobs:
         with:
           # npm cacke files are stored in `~/.npm` on Linux/maxOS
           path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          key:
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{
+            hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-            
+
       - name: Install Dependencies
         run: npm install
 
       - name: Build
         run: npm run build
-      
+
       # @todo: Add tests/reports and create PR
