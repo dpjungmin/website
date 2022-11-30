@@ -27,6 +27,10 @@ export const Section = styled.section`
     color: ${({ theme }) => theme.colors.dp};
   }
 
+  p {
+    line-height: ${({ theme }) => theme.lineHeights.loose};
+  }
+
   .resume-button {
     ${({ theme }) => theme.mixins.flexCenter};
     ${({ theme }) => theme.mixins.smallButton};
