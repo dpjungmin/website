@@ -1,7 +1,7 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
 import { Layout, SEO } from "@components"
-import { Hero, About, Projects } from "@components/sections"
+import { Hero } from "@components/sections"
 import * as $ from "@styles/pages/index.styles"
 
 interface IndexPageProps {
@@ -14,8 +14,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
       <SEO />
       <$.Container className="container fillHeight">
         <Hero />
-        <About />
-        <Projects />
       </$.Container>
     </Layout>
   )

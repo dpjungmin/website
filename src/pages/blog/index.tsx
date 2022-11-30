@@ -1,6 +1,6 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { Layout, SEO } from "@components"
 import { Icon } from "@components/icons"
 import * as $ from "@styles/pages/blog/index.styles"
@@ -29,7 +29,9 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
       <SEO title="Blog" />
       <$.Container>
         <$.Hero>
-          <h1>Hi I'm David, and this is my blog.</h1>
+          <h1>
+            Hi, I'm <Link to="/#about">David</Link>. This is my blog.
+          </h1>
         </$.Hero>
         <$.Articles>
           <h1>Articles</h1>
@@ -56,7 +58,7 @@ const query = graphql`
   {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/blog/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       totalCount
       nodes {

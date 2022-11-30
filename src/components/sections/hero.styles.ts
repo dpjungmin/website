@@ -1,3 +1,4 @@
+import { fontSizes } from "@theme/font-sizes"
 import styled from "styled-components"
 
 export const Section = styled.section`
@@ -10,23 +11,19 @@ export const Section = styled.section`
   padding-top: 100px;
 
   h1 {
-    font-size: 4.5em;
-    font-weight: 600;
     margin-bottom: 20px;
-  }
+    font-size: clamp(${fontSizes.sm}, 5vw, ${fontSizes.md});
+    font-weight: 400;
 
-  h3 {
-    font-size: 2.2em;
-    font-weight: 600;
-    margin-bottom: 8px;
+    @media (max-width: 480px) and (min-height: 700px) {
+      padding-bottom: 10vh;
+    }
   }
 
   p {
     font-size: 1.6em;
-    font-weight: 400;
     line-height: 1.4;
-    max-width: 32em;
-    margin-top: 14px;
+    margin-top: 10px;
   }
 `
 

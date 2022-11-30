@@ -7,12 +7,12 @@ module.exports = {
       url: "https://github.com/dpjungmin",
     },
     {
-      name: "Instagram",
-      url: "https://www.instagram.com/dpjungmin/",
-    },
-    {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/dpjungmin/",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/dpjungmin/",
     },
   ],
 

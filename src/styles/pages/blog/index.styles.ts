@@ -18,11 +18,12 @@ export const Hero = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
-  height: 322px;
+  height: 222px;
   width: 100%;
 
   h1 {
     font-size: ${({ theme }) => theme.fontSizes.hero};
+    font-weight: 400;
   }
 `
 
@@ -77,5 +78,6 @@ export const Flex = styled.div`
   svg {
     height: 168px;
     width: 168px;
+    margin-bottom: 20px;
   }
 `
