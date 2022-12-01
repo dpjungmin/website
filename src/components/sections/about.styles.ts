@@ -7,7 +7,6 @@ export const Section = styled.section`
   width: 100%;
   padding: 140px;
   font-size: calc(10px + 0.33vw);
-  min-height: 80vh;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.hd}) {
     padding: 120px 60px;

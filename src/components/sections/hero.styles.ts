@@ -1,4 +1,3 @@
-import { fontSizes } from "@theme/font-sizes"
 import styled from "styled-components"
 
 export const Section = styled.section`
@@ -11,9 +10,9 @@ export const Section = styled.section`
   padding-top: 100px;
 
   h1 {
+    font-size: ${({ theme }) => theme.fontSizes.hero};
     margin-bottom: 20px;
-    font-size: clamp(${fontSizes.sm}, 5vw, ${fontSizes.md});
-    font-weight: 400;
+    font-weight: 600;
 
     @media (max-width: 480px) and (min-height: 700px) {
       padding-bottom: 10vh;
@@ -21,20 +20,20 @@ export const Section = styled.section`
   }
 
   p {
-    font-size: 1.6em;
-    line-height: 1.4;
-    margin-top: 10px;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    line-height: ${({ theme }) => theme.lineHeights.solid};
+    margin-top: 20px;
   }
 `
 
 export const Text = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 `
 
 export const SocialMediaList = styled.ul`
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin-left: -10px;
   padding: 0;
   list-style: none;
 
@@ -45,7 +44,6 @@ export const SocialMediaList = styled.ul`
     a {
       padding: 12px;
       border: none;
-      /* border: 1px dashed ${({ theme }) => theme.colors.orange[40]}; */
     }
 
     &:not(:last-child) {
@@ -64,8 +62,8 @@ export const SocialMediaList = styled.ul`
     svg {
       color: ${({ theme }) => theme.colors.socialMediaIcon.color};
       fill: ${({ theme }) => theme.colors.socialMediaIcon.fill};
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
     }
   }
 `

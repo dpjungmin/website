@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { socialMedia } from "@config"
 import { Icon } from "@components/icons"
 import * as $ from "./hero.styles"
@@ -27,6 +27,9 @@ const Hero: React.FC = () => {
 
   return (
     <$.Section>
+      <h1>
+        Hi. I'm <Link to="/#about">David</Link>, a software engineer.
+      </h1>
       <$.Text dangerouslySetInnerHTML={{ __html: html }} />
       <$.SocialMediaList>
         {socialMedia &&
