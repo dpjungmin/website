@@ -7,7 +7,7 @@ const Jobs: React.FC = () => {
     {
       jobs: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: { frontmatter: { date: DESC } }
       ) {
         edges {
           node {
@@ -24,12 +24,6 @@ const Jobs: React.FC = () => {
       }
     }
   `)
-
-  // title: Software Engineer Intern
-  // company: Apple Inc.
-  // location: Cupertino, CA
-  // range: May 2022. - Aug 2022.
-  // url: https://www.apple.com/
 
   if (data.jobs.edges.length === 0) {
     throw new Error("Markdown for `jobs` section not found")
