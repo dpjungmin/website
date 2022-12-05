@@ -2,8 +2,6 @@
   <img alt="Logo" src="https://raw.githubusercontent.com/dpjungmin/website/main/src/images/icon.png" width="140" height="140" />
 </div>
 
-Trying out Gatsby v4 😎
-
 [Preview Deployment](https://dpjungmin.gatsbyjs.io)
 
 [Production Deployment](https://dpjungmin2.gatsbyjs.io)
