@@ -73,8 +73,11 @@ export const Job = styled.div`
   }
 
   .range {
+    margin-left: 1px;
     margin-bottom: 20px;
-    color: ${({ theme }) => theme.colors.grey[50]};
+    font-family: var(--font-mono);
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    color: ${({ theme }) => theme.colors.text.secondary};
   }
 
   &:hover {

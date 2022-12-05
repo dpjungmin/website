@@ -5,6 +5,7 @@ import { css } from "styled-components"
 const prism = css`
   code {
     font-family: ${({ theme }) => theme.fonts.FiraCode};
+    color: ${({ theme }) => theme.colors.code.text};
 
     /* Inline code */
     &.language-text {
@@ -126,12 +127,13 @@ const prism = css`
     padding: 8px;
     transform: translateY(-20px);
     background-color: transparent;
-    color: ${({ theme }) => theme.colors.copyButton.color};
+    color: ${({ theme }) => theme.colors.code.copyButton};
     font-size: ${({ theme }) => theme.fontSizes.sm};
 
     &:hover,
     &:focus {
-      color: ${({ theme }) => theme.colors.copyButton.colorHover};
+      color: ${({ theme }) => theme.colors.code.bg};
+      background-color: ${({ theme }) => theme.colors.code.copyButton};
     }
   }
 
@@ -216,7 +218,7 @@ const prism = css`
   /*****  Add shell prompt  *****/
 
   .command-line-prompt > span:before {
-    color: #999;
+    color: #cad8d2;
     content: " ";
     display: block;
     padding-right: 0.8em;
@@ -251,14 +253,33 @@ const prism = css`
       color: ${({ theme }) => theme.colors.code.punctuation};
     }
 
-    &.selector,
-    &.string {
+    &.selector {
       color: ${({ theme }) => theme.colors.code.selector};
+    }
+
+    &.string {
+      color: ${({ theme }) => theme.colors.code.string};
     }
 
     &.tag,
     &.number {
       color: ${({ theme }) => theme.colors.code.tag};
+    }
+
+    &.macro {
+      color: #30dff3;
+    }
+
+    &.macro-name {
+      color: ${({ theme }) => theme.colors.code.macro};
+    }
+
+    &.function {
+      color: ${({ theme }) => theme.colors.code.function};
+    }
+
+    &.directive-hash {
+      color: ${({ theme }) => theme.colors.code.text};
     }
   }
 `

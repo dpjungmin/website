@@ -46,7 +46,7 @@ export const Article = styled(Link)`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px 0px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
   margin: 1rem;
   padding: 1rem;
@@ -55,8 +55,8 @@ export const Article = styled(Link)`
   border-bottom: none;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: rgb(0 0 0 / 8%) 0px 12px 20px 0px;
+    transform: translateY(-5px);
+    box-shadow: rgb(0 0 0 / 12%) 0px 12px 20px 0px;
   }
 
   p {
@@ -70,7 +70,7 @@ export const Article = styled(Link)`
     font-family: var(--font-mono);
     font-size: ${({ theme }) => theme.fontSizes.sm};
     color: ${({ theme }) => theme.colors.text.secondary};
-    margin-right: 5px;
+    margin-left: 1px;
   }
 `
 

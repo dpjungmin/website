@@ -5,7 +5,7 @@ import { Layout, SEO } from "@components"
 import { Icon } from "@components/icons"
 import * as $ from "@styles/pages/blog/index.styles"
 
-interface BlogPageProps {
+interface BojPageProps {
   readonly location: WindowLocation
   data: {
     allMarkdownRemark: {
@@ -21,24 +21,18 @@ interface BlogPageProps {
   }
 }
 
-const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
+const BojPage: React.FC<BojPageProps> = ({ location, data }) => {
   const { nodes } = data.allMarkdownRemark
 
   return (
     <Layout location={location}>
-      <SEO title="Blog" />
+      <SEO title="BOJ" />
       <$.Container>
-        <$.Hero>
-          <h1>
-            Hi, I'm <Link to="/#about">David</Link>. This is my blog.
-          </h1>
-        </$.Hero>
         <$.Articles>
-          <h1>Articles</h1>
           <$.ArticleWrapper>
             {nodes.map(({ id, frontmatter: { title, slug, date } }) => {
               return (
-                <$.Article key={id} to={`/blog/${slug}`}>
+                <$.Article key={id} to={`${slug}`}>
                   <p>{title}</p>
                   <span>{date}</span>
                 </$.Article>
@@ -57,14 +51,14 @@ const BlogPage: React.FC<BlogPageProps> = ({ location, data }) => {
 const query = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: { fileAbsolutePath: { regex: "/boj/" } }
       sort: { frontmatter: { date: DESC } }
     ) {
       totalCount
       nodes {
         id
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "YYYY년 MM월 DD일")
           title
           slug
         }
@@ -73,4 +67,4 @@ const query = graphql`
   }
 `
 
-export { BlogPage as default, query }
+export { BojPage as default, query }
