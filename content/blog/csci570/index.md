@@ -1,7 +1,7 @@
 ---
 date: 2021-08-19
 title: USC CSCI-570 (Analysis of Algorithms) course review
-slug: csci570
+slug: /blog/csci570/
 description: USC CSCI-570 Analysis of Algorithms course review
 ---
 

@@ -25,8 +25,8 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   pageContext,
   data,
 }) => {
-  // console.log("pageContext", pageContext)
-  // console.log("data", data)
+  console.log("pageContext", pageContext)
+  console.log("data", data)
 
   React.useEffect(() => {
     const codeCopyButtons = document.querySelectorAll(".gatsby-code-button")
@@ -68,7 +68,7 @@ const query = graphql`
       excerpt
       tableOfContents(absolute: false, maxDepth: 2)
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         title
         description
       }

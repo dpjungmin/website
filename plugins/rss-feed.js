@@ -25,24 +25,20 @@ module.exports = {
             })
           })
         },
-        query: `
-          {
-            allMarkdownRemark(
-              sort: { order: DESC, fields: [frontmatter___date] },
-            ) {
-              edges {
-                node {
-                  html
-                  frontmatter {
-                    date
-                    title
-                    slug
-                  }
-                }
-              }
-            }
-          }
-        `,
+        query: `{
+  allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+    edges {
+      node {
+        html
+        frontmatter {
+          date
+          title
+          slug
+        }
+      }
+    }
+  }
+}`,
         output: "/rss.xml",
         title: "RSS Feed",
         // optional configuration to insert feed reference in pages:

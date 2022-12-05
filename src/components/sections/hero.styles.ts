@@ -10,34 +10,30 @@ export const Section = styled.section`
   padding-top: 100px;
 
   h1 {
-    font-size: 4.5em;
-    font-weight: 600;
+    font-size: ${({ theme }) => theme.fontSizes.hero};
     margin-bottom: 20px;
-  }
-
-  h3 {
-    font-size: 2.2em;
     font-weight: 600;
-    margin-bottom: 8px;
+
+    @media (max-width: 480px) and (min-height: 700px) {
+      padding-bottom: 10vh;
+    }
   }
 
   p {
-    font-size: 1.6em;
-    font-weight: 400;
-    line-height: 1.4;
-    max-width: 32em;
-    margin-top: 14px;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    line-height: ${({ theme }) => theme.lineHeights.solid};
+    margin-top: 20px;
   }
 `
 
 export const Text = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 `
 
 export const SocialMediaList = styled.ul`
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin-left: -10px;
   padding: 0;
   list-style: none;
 
@@ -48,7 +44,6 @@ export const SocialMediaList = styled.ul`
     a {
       padding: 12px;
       border: none;
-      /* border: 1px dashed ${({ theme }) => theme.colors.orange[40]}; */
     }
 
     &:not(:last-child) {
@@ -67,8 +62,8 @@ export const SocialMediaList = styled.ul`
     svg {
       color: ${({ theme }) => theme.colors.socialMediaIcon.color};
       fill: ${({ theme }) => theme.colors.socialMediaIcon.fill};
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
     }
   }
 `

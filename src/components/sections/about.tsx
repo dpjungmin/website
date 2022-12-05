@@ -1,12 +1,12 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Icon } from "@components/icons"
+// import { Icon } from "@components/icons"
 import * as $ from "./about.styles"
 
 const About: React.FC = () => {
   const data = useStaticQuery(graphql`
     {
-      hero: allMarkdownRemark(
+      about: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/_about/" } }
       ) {
         edges {
@@ -18,11 +18,11 @@ const About: React.FC = () => {
     }
   `)
 
-  if (data.hero.edges.length === 0) {
+  if (data.about.edges.length === 0) {
     throw new Error("Markdown for about content not found")
   }
 
-  const { html } = data.hero.edges[0].node
+  const { html } = data.about.edges[0].node
 
   // const ResumeLink = (
   //   <a

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import { socialMedia } from "@config"
 import { Icon } from "@components/icons"
 import * as $ from "./hero.styles"
@@ -13,9 +13,6 @@ const Hero: React.FC = () => {
         edges {
           node {
             html
-            frontmatter {
-              name
-            }
           }
         }
       }
@@ -26,13 +23,13 @@ const Hero: React.FC = () => {
     throw new Error("Markdown for hero content not found")
   }
 
-  const { html, frontmatter } = data.hero.edges[0].node
-  const { name } = frontmatter
+  const { html } = data.hero.edges[0].node
 
   return (
     <$.Section>
-      <h1>Hello.</h1>
-      <h3>My name is {name}.</h3>
+      <h1>
+        Hi. I'm <Link to="/#about">David</Link>, a software engineer.
+      </h1>
       <$.Text dangerouslySetInnerHTML={{ __html: html }} />
       <$.SocialMediaList>
         {socialMedia &&

@@ -1,12 +1,14 @@
-import { Tooltip } from "@chakra-ui/react"
 import { theme } from "@theme"
 import { Icon } from "@components/icons"
+import MdxLayout from "@components/layout/mdx-layout"
+
+<MdxLayout>
 
 # Design System
 
 ## 1. Logo
 
-<div style="width: 200px; height: 200px; margin-bottom: 50px;">
+<div style={{ width: "200px", height: "200px", marginBottom: "50px" }}>
   <Icon name="jellyppi" />
 </div>
 
@@ -167,38 +169,7 @@ import { Icon } from "@components/icons"
 - Sans Serif: `Open Sans`
 - Monospace: `Fira Code`
 
-## 4. Buttons
-
-### Small button
-
-<Tooltip
-  hasArrow
-  label="This is a small button"
-  fontSize="md"
-  placement="right"
->
-  <div
-    css={theme.mixins.smallButton}
-    css={theme.mixins.flexCenter}
-    style="width: 150px"
-  >
-    button
-  </div>
-</Tooltip>
-
-### Big button
-
-<Tooltip hasArrow label="This is a big button" fontSize="md" placement="right">
-  <div
-    css={theme.mixins.bigButton}
-    css={theme.mixins.flexCenter}
-    style="width: 150px"
-  >
-    button
-  </div>
-</Tooltip>
-
-## 5. Code Blocks
+## 4. Code Blocks
 
 ### Inline
 
@@ -268,20 +239,22 @@ nvim -S ps.vim
 nvm --version
 ```
 
-## 6. Blockquote
+## 5. Blockquote
 
 > This is a blockquote
 
 <div
-  style="
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  width: 100%; 
-  height: 250px; 
-  margin-top: 80px;
-  margin-bottom: 20px;
-  "
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "250px",
+    marginTop: "80px",
+    marginBottom: "20px",
+  }}
 >
   <Icon name="jellyppi2" />
 </div>
+
+</MdxLayout>

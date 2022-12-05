@@ -7,12 +7,12 @@ module.exports = {
       url: "https://github.com/dpjungmin",
     },
     {
-      name: "Instagram",
-      url: "https://www.instagram.com/dpjungmin/",
-    },
-    {
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/dpjungmin/",
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/dpjungmin/",
     },
   ],
 
@@ -21,9 +21,9 @@ module.exports = {
       name: "About",
       url: "/#about",
     },
-    // {
-    //   name: "Work",
-    //   url: "/#projects",
-    // },
+    {
+      name: "Experience",
+      url: "/#jobs",
+    },
   ],
 }

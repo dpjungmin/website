@@ -7,17 +7,16 @@ import { theme } from "@theme"
 
 interface LayoutProps {
   readonly location: WindowLocation
+  readonly children: React.ReactNode
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, location }) => {
-  const isHome = location.pathname == "/"
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div id="root">
         <div id="content">
-          <Nav isHome={isHome} />
+          <Nav path={location.pathname} />
           {children}
           <Footer />
         </div>
