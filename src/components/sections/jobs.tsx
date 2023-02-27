@@ -29,12 +29,11 @@ const Jobs: React.FC = () => {
     throw new Error("Markdown for `jobs` section not found")
   }
 
-  // const { html } = data.hero.edges[0].node
   const jobs = data.jobs.edges
 
   return (
     <$.Section id="jobs">
-      <h1>Experience</h1>
+      <h1>Professional Experience</h1>
       <$.JobList>
         {jobs &&
           jobs.map(({ node }, i: number) => {
