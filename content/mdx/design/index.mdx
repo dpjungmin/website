@@ -219,6 +219,28 @@ import * as React from "react"
 
 // highlight-next-line
 const MyComponent = () => <div>😎</div>
+
+// highlight-start
+console.log("Multi-line")
+console.log("highlighting!")
+// highlight-end
+```
+
+### Line numbering
+
+```javascript{numberLines: true}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        // highlight-next-line
+        `gatsby-remark-prismjs`,
+      ]
+    }
+  }
+]
 ```
 
 ### Shell

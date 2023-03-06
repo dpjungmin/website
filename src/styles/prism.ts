@@ -191,6 +191,7 @@ const prism = css`
   }
 
   .gatsby-highlight pre[class="language-cpp"]::before,
+  .gatsby-highlight pre[class="language-cc"]::before,
   .gatsby-highlight pre[class="language-c++"]::before {
     content: "c++";
     background: ${({ theme }) => theme.colors.languageBadge.cpp.bg};
@@ -207,12 +208,19 @@ const prism = css`
     content: "shell";
   }
 
-  /*****  Add line numbering (currently not in use)  *****/
+  /*****  Add line numbering  *****/
 
   .gatsby-highlight pre[class*="language-"].line-numbers {
     padding: 0;
-    padding-left: 2.8em;
+    padding-left: 3.15em;
+    line-height: ${({ theme }) => theme.lineHeights.dense};
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-family: ${({ theme }) => theme.fonts.FiraCode};
     overflow: initial;
+  }
+
+  .gatsby-highlight pre[class*="language-"].line-numbers > .line-numbers-rows {
+    border-right: 1px solid #434846;
   }
 
   /*****  Add shell prompt  *****/
@@ -243,6 +251,7 @@ const prism = css`
   .token {
     &.keyword {
       color: ${({ theme }) => theme.colors.code.keyword};
+      font-weight: bold;
     }
 
     &.comment {
