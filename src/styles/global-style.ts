@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  html {    
+  html {
     box-sizing: border-box;
     scrollbar-width: thin;
   }
@@ -37,7 +37,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.text.primary};
     background-color: ${theme.colors.ui.background};
     font-size: ${theme.fontSizes.lg};
-    font-family: ${theme.fonts.OpenSans}; 
+    font-family: ${theme.fonts.OpenSans};
     -webkit-font-smoothing: antialiased;
     transition: all ${theme.transition.default};
     overflow-x: hidden;
@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     width: 100%;
     max-width: 1600px;
-    padding: 200px 150px; 
+    padding: 200px 150px;
 
     @media (max-width: 1080px) {
       padding: 200px 100px;

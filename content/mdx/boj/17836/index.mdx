@@ -2,10 +2,36 @@
 date: 2023-03-06
 title: "백준 17836번: 공주님을 구해라!"
 slug: /boj/17836/
-description: "백준 17836번: 공주님을 구해라!"
 ---
 
-https://www.acmicpc.net/problem/17836
+export const title = "백준 17836번: 공주님을 구해라!"
+export const date = "2023-03-06"
+
+import MdxLayout from "@components/layout/mdx-layout"
+import { SEO } from "@components"
+import { Container, Title, Article } from "@styles/pages/blog/post.styles"
+
+<MdxLayout>
+<SEO title={title} description={title} />
+<Container>
+
+<Title>
+
+{title}
+
+<span>{date}</span>
+
+</Title>
+
+<Article>
+
+[문제](https://www.acmicpc.net/problem/17836)
+
+<p>
+  **BFS**를 사용해 성의 벽을 피해 공주를 구하는 최단 시간을 구한다. 단, 중간에
+  명검을 발견하면 벽을 뚫고 지나갈 수 있으므로, **맨해튼 거리**로 최단 시간을
+  기록해준다.
+</p>
 
 ```cpp{numberLines: true}
 #include <bits/stdc++.h>
@@ -33,7 +59,7 @@ int main(void) {
   queue<tuple<int, int, int>> q;
 
   q.push({0, 0, 0});
-  a[0][0] = -1;
+  a[0][0] = -1; // -1로 방문 기록
 
   while (!q.empty()) {
     auto [r, c, cnt] = q.front();
@@ -48,13 +74,15 @@ int main(void) {
       int nr = r + dr;
       int nc = c + dc;
 
+      // 성 내부?
       if (0 <= nr and nr < n and 0 <= nc and nc < m) {
+        // 방문했거나 벽이면 무시
         if (a[nr][nc] == -1 or a[nr][nc] == 1)
           continue;
-        // highlight-start
+        // 명검 발견!
         if (a[nr][nc] == 2)
+          // highlight-next-line
           ans = cnt + 1 + (n - 1 - nr) + (m - 1 - nc);
-        // highlight-end
         q.push({nr, nc, cnt + 1});
         a[nr][nc] = -1;
       }
@@ -67,3 +95,7 @@ int main(void) {
     cout << ans;
 }
 ```
+
+</Article>
+</Container>
+</MdxLayout>
