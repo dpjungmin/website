@@ -139,4 +139,10 @@ export const Links = styled.div`
     margin-left: 15px;
     font-size: ${({ theme }) => theme.fontSizes.xs};
   }
+
+  .boj-button {
+    ${({ theme }) => theme.mixins.smallButton};
+    margin-left: 15px;
+    font-size: ${({ theme }) => theme.fontSizes.xs};
+  }
 `

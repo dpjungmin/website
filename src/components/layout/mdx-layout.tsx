@@ -10,7 +10,7 @@ const MdxLayout: React.FC = ({ children }) => {
       <GlobalStyle />
       <div id="root">
         <div id="content">
-          <Nav path={location.pathname} />
+          <Nav />
           <main className="container fillHeight">{children}</main>
           <Footer />
         </div>
