@@ -28,7 +28,7 @@ import { Container, Title, Article } from "@styles/pages/blog/post.styles"
 [문제](https://www.acmicpc.net/problem/17836)
 
 <p>
-  **BFS**를 사용해 성의 벽을 피해 공주를 구하는 최단 시간을 구한다. 단, 중간에
+  `BFS`를 사용해 성의 벽을 피해 공주를 구하는 최단 시간을 구한다. 단, 중간에
   명검을 발견하면 벽을 뚫고 지나갈 수 있으므로, **맨해튼 거리**로 최단 시간을
   기록해준다.
 </p>
@@ -95,6 +95,8 @@ int main(void) {
     cout << ans;
 }
 ```
+
+47번 줄에서 명검을 발견하면 48번 줄에서 맨해튼 거리를 사용해 기록한다.
 
 </Article>
 </Container>
