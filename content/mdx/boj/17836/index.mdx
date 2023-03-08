@@ -28,9 +28,9 @@ import { Container, Title, Article } from "@styles/pages/blog/post.styles"
 [문제](https://www.acmicpc.net/problem/17836)
 
 <p>
-  `BFS`를 사용해 성의 벽을 피해 공주를 구하는 최단 시간을 구한다. 단, 중간에
-  명검을 발견하면 벽을 뚫고 지나갈 수 있으므로, **맨해튼 거리**로 최단 시간을
-  기록해준다.
+  <code class="language-text">BFS</code>를 사용해 성의 벽을 피해 공주를 구하는
+  최단 시간을 구한다. 단, 중간에 명검을 발견하면 벽을 뚫고 지나갈 수 있으므로,
+  **맨해튼 거리**로 최단 시간을 기록해준다.
 </p>
 
 ```cpp{numberLines: true}
@@ -58,7 +58,7 @@ int main(void) {
   int ans = INT_MAX;
   queue<tuple<int, int, int>> q;
 
-  q.push({0, 0, 0});
+  q.push({0, 0, 0}); // {row, column, time}
   a[0][0] = -1; // -1로 방문 기록
 
   while (!q.empty()) {

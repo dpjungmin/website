@@ -27,7 +27,15 @@ import { Container, Title, Article } from "@styles/pages/blog/post.styles"
 
 [문제](https://www.acmicpc.net/problem/13335)
 
-<p>`큐`를 `사용해` 다리를 시뮬레이션 한다.</p>
+<p>
+  <code class="language-text">큐</code>를 사용해 다리를 시뮬레이션 한다. 큐에는
+  다리 위에 올라가 있는 트럭을 담고, 최대 단위길이 (다리의 길이) 만큼 트럭을
+  담는다. 단위시간 마다 큐에 트럭을 담는데, 다음 트럭을 다리에 올렸을 때 다리의
+  최대하중을 넘지 않으면 실제 트럭을 담고, 넘으면 dummy 트럭을 담는다. 단위시간
+  마다 단위길이 만큼 이동하는 것을 시뮬레이션하기 위해 dummy 트럭을 담는다. 실제
+  구현에서는 다리위에 올라가 있는 트럭들의 무게 정보를 유지하기 위해 큐에 트럭의
+  무게를 담는다 (dummy 트럭의 무게는 0).
+</p>
 
 ```cpp
 #include <bits/stdc++.h>
@@ -49,6 +57,7 @@ int main(void) {
   int ans = 0;
   queue<int> q;
 
+  // Each iteration simulates the events of one unit time.
   for (int i = 0, w_sum = 0; i < n; ans++) {
     // A truck has passed the bridge!
     if ((int)q.size() == len) {
