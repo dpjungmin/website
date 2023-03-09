@@ -52,6 +52,12 @@ module.exports = {
           escapeEntities: {},
         },
       },
+      {
+        resolve: `gatsby-remark-katex`,
+        options: {
+          strict: `ignore`,
+        },
+      },
     ],
     mdxOptions: {
       // defaultLayouts: {

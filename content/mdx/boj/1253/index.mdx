@@ -4,9 +4,50 @@ title: "백준 1253번: 좋다"
 slug: /boj/1253/
 ---
 
-[https://www.acmicpc.net/problem/17836](https://www.acmicpc.net/problem/17836)
+export const title = "백준 1253번: 좋다"
+export const date = "2023-03-08"
 
-```cpp{numberLines: true}
+import MdxLayout from "@components/layout/mdx-layout"
+import { SEO } from "@components"
+import { Container, Title, Article } from "@styles/pages/blog/post.styles"
+
+<MdxLayout>
+<SEO title={title} description={title} />
+<Container>
+
+<Title>
+
+{title}
+
+<span>{date}</span>
+
+</Title>
+
+<Article>
+
+[문제](https://www.acmicpc.net/problem/1253)
+
+<p>
+  모든 두 숫자의 조합을 확인해, 두 숫자의 합이 입력 받은 $n$개의 수 중에 있으면
+  **좋은 수**이다. 단, 좋은 수는 자기 자신을 제외한 다른 위치에 있는 숫자 두
+  개의 합으로 나타내야 할 수 있어야 한다.
+</p>
+
+<p>
+  이를 구현하기 위해 각 숫자를 몇 번 봤는지 기록해준다. 특별히 주의해야 할
+  경우는 아래 예시와 같이 숫자 $0$이 있는 경우이다.
+</p>
+
+$0 + 0 = 0$ ($0$이 $3$개 이상 있어야 함)
+
+$0 + n = n$ ($n$이 $2$개 이상 있어야 함)
+
+<p>
+  이 두가지 경우를 주의해서 모든 가능한 좋은 수를 집합에 넣고 $n$개의 숫자 중에
+  이 집합에 속한 숫자의 개수를 출력해주면 된다.
+</p>
+
+```cpp
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -14,5 +55,63 @@ using namespace std;
 int main(void) {
   cin.tie(nullptr)->sync_with_stdio(false);
   cin.exceptions(ios::badbit | ios::failbit);
+
+  int n;
+  cin >> n;
+
+  vector<int> a(n);
+
+  // seen[i] = the number of i's we have seen
+  unordered_map<int, int> seen;
+
+  for (auto &x : a) {
+    cin >> x;
+    seen[x]++;
+  }
+
+  // Good number!
+  unordered_set<int> good;
+
+  for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+      int sum = a[i] + a[j];
+
+      // Did we see this number?
+      if (!seen[sum])
+        continue;
+
+      // When sum is zero we need more than two zeros
+      if (sum == a[i] and sum == a[j] and seen[sum] <= 2)
+        continue;
+
+      // When a[j] is zero we need more than one a[i]
+      if (sum == a[i] and seen[sum] == 1)
+        continue;
+
+      // When a[i] is zero we need more than one a[j]
+      if (sum == a[j] and seen[sum] == 1)
+        continue;
+
+      good.insert(sum);
+    }
+  }
+
+  int ans = 0;
+
+  for (auto x : a) {
+    if (good.count(x))
+      ans++;
+  }
+
+  cout << ans;
 }
 ```
+
+숫자의 개수를 $n$이라고 하면,
+
+- time complexity: $O(n^2)$
+- space complexity: $O(n)$
+
+</Article>
+</Container>
+</MdxLayout>
