@@ -25,8 +25,8 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
   pageContext,
   data,
 }) => {
-  console.log("pageContext", pageContext)
-  console.log("data", data)
+  // console.log("pageContext", pageContext)
+  // console.log("data", data)
 
   React.useEffect(() => {
     const codeCopyButtons = document.querySelectorAll(".gatsby-code-button")

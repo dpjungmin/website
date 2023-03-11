@@ -1,0 +1,47 @@
+---
+date: 2022-12-05
+title: "백준 1000번: A+B"
+slug: /boj/1000/
+---
+
+export const title = "백준 1000번: A+B"
+export const date = "2022-12-05"
+
+import MdxLayout from "@components/layout/mdx-layout"
+import { SEO } from "@components"
+import { Container, Title, Article } from "@styles/pages/blog/post.styles"
+
+<MdxLayout>
+<SEO title={title} description={title} />
+<Container>
+
+<Title>
+
+{title}
+
+<span>{date}</span>
+
+</Title>
+
+<Article>
+
+[https://www.acmicpc.net/problem/1000](https://www.acmicpc.net/problem/1000)
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(void) {
+  cin.tie(nullptr)->sync_with_stdio(false);
+  cin.exceptions(ios::badbit | ios::failbit);
+
+  int a, b;
+  cin >> a >> b;
+  cout << a + b;
+}
+```
+
+</Article>
+</Container>
+</MdxLayout>

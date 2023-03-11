@@ -1,0 +1,108 @@
+---
+date: 2023-03-06
+title: "백준 17836번: 공주님을 구해라!"
+slug: /boj/17836/
+---
+
+export const title = "백준 17836번: 공주님을 구해라!"
+export const date = "2023-03-06"
+
+import MdxLayout from "@components/layout/mdx-layout"
+import { SEO } from "@components"
+import { Container, Title, Article } from "@styles/pages/blog/post.styles"
+
+<MdxLayout>
+<SEO title={title} description={title} />
+<Container>
+
+<Title>
+
+{title}
+
+<span>{date}</span>
+
+</Title>
+
+<Article>
+
+[문제](https://www.acmicpc.net/problem/17836)
+
+<p>
+  <code class="language-text">BFS</code>를 사용해 성의 벽을 피해 공주를 구하는
+  최단 시간을 구한다. 단, 중간에 명검을 발견하면 벽을 뚫고 지나갈 수 있으므로,
+  **맨해튼 거리**로 최단 시간을 기록해준다.
+</p>
+
+```cpp{numberLines: true}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<pair<int, int>> dirs{{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+int main(void) {
+  cin.tie(nullptr)->sync_with_stdio(false);
+  cin.exceptions(ios::badbit | ios::failbit);
+
+  int n, m, t;
+  cin >> n >> m >> t;
+
+  vector<vector<int>> a(n, vector<int>(m));
+
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
+    }
+  }
+
+  int ans = INT_MAX;
+  queue<tuple<int, int, int>> q;
+
+  q.push({0, 0, 0}); // {row, column, time}
+  a[0][0] = -1; // -1로 방문 기록
+
+  while (!q.empty()) {
+    auto [r, c, cnt] = q.front();
+    q.pop();
+
+    if (r == n - 1 and c == m - 1) {
+      ans = min(ans, cnt);
+      break;
+    }
+
+    for (auto [dr, dc] : dirs) {
+      int nr = r + dr;
+      int nc = c + dc;
+
+      // 성 내부?
+      if (0 <= nr and nr < n and 0 <= nc and nc < m) {
+        // 방문했거나 벽이면 무시
+        if (a[nr][nc] == -1 or a[nr][nc] == 1)
+          continue;
+        // 명검 발견!
+        if (a[nr][nc] == 2)
+          // highlight-next-line
+          ans = cnt + 1 + (n - 1 - nr) + (m - 1 - nc);
+        q.push({nr, nc, cnt + 1});
+        a[nr][nc] = -1;
+      }
+    }
+  }
+
+  if (ans > t)
+    cout << "Fail";
+  else
+    cout << ans;
+}
+```
+
+47번 줄에서 명검을 발견하면 48번 줄에서 맨해튼 거리를 사용해 기록한다.
+
+성의 크기를 $N * M$이라고 하면,
+
+- time complexity: $O(N * M)$
+- asymptotic space complexity: $O(N + M)$
+
+</Article>
+</Container>
+</MdxLayout>

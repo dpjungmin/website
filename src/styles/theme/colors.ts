@@ -237,9 +237,9 @@ const colors = {
     cssString: "#a2466c",
     invisibles: "#e0d7d1",
     scrollbarThumb: "#f4d1c6",
-    lineHighlightBorder: "#5a605d",
+    lineHighlightBorder: "#434846",
     copyButton: palette.grey[40],
-    lineHighlightBackground: "#5a605d",
+    lineHighlightBackground: "#434846",
     scrollbarTrack: "#faede5",
     titleBackground: palette.grey[5],
     title: "#866c5b",
@@ -263,7 +263,7 @@ const colors = {
       text: palette.grey[90],
     },
     cpp: {
-      bg: palette.magenta[40],
+      bg: palette.blue[80],
       text: palette.grey[5],
     },
     rust: {

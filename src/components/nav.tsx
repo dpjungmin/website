@@ -7,12 +7,13 @@ import { navLinks } from "@config"
 import * as $ from "./nav.styles"
 
 interface NavProps {
-  path: string
+  path?: string
 }
 
 const Nav: React.FC<NavProps> = ({ path }) => {
   const isHome = path == "/"
   const isBlogHome = path == "/blog/"
+  const isBlog = path && path.includes("/blog/")
   const scrollDirection = useScrollDirection()
   const [scrolledToTop, setScrolledToTop] = React.useState(true)
 
@@ -68,6 +69,14 @@ const Nav: React.FC<NavProps> = ({ path }) => {
     </$.Links>
   )
 
+  const OtherNavLinks = (
+    <$.Links>
+      <Link className="boj-button" to="/boj/" aria-label="boj">
+        BOJ
+      </Link>
+    </$.Links>
+  )
+
   return (
     <$.Header
       scrollDirection={scrollDirection}
@@ -81,8 +90,10 @@ const Nav: React.FC<NavProps> = ({ path }) => {
             {NavLinks}
             <Menu />
           </>
-        ) : isBlogHome ? null : (
+        ) : isBlogHome ? null : isBlog ? (
           <>{BlogNavLinks}</>
+        ) : (
+          <>{OtherNavLinks}</>
         )}
       </$.Nav>
     </$.Header>

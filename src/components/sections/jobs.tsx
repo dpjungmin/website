@@ -38,7 +38,7 @@ const Jobs: React.FC = () => {
         {jobs &&
           jobs.map(({ node }, i: number) => {
             const { frontmatter, html } = node
-            const { title, url, company, range } = frontmatter
+            const { title, url, company, range, location } = frontmatter
 
             return (
               <$.Job id={`job-${i}`}>
@@ -50,7 +50,13 @@ const Jobs: React.FC = () => {
                   </span>
                 </h3>
 
-                <p className="range">{range}</p>
+                <p className="range">
+                  {range}
+                  <span className="location">
+                    {" // "}
+                    {location}
+                  </span>
+                </p>
 
                 <$.Text dangerouslySetInnerHTML={{ __html: html }} />
               </$.Job>

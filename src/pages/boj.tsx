@@ -1,6 +1,6 @@
 import * as React from "react"
 import { WindowLocation } from "@reach/router"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Layout, SEO } from "@components"
 import { Icon } from "@components/icons"
 import * as $ from "@styles/pages/blog/index.styles"
@@ -8,7 +8,7 @@ import * as $ from "@styles/pages/blog/index.styles"
 interface BojPageProps {
   readonly location: WindowLocation
   data: {
-    allMarkdownRemark: {
+    allMdx: {
       nodes: {
         id: string
         frontmatter: {
@@ -22,7 +22,7 @@ interface BojPageProps {
 }
 
 const BojPage: React.FC<BojPageProps> = ({ location, data }) => {
-  const { nodes } = data.allMarkdownRemark
+  const { nodes } = data.allMdx
 
   return (
     <Layout location={location}>
@@ -50,8 +50,8 @@ const BojPage: React.FC<BojPageProps> = ({ location, data }) => {
 
 const query = graphql`
   {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/boj/" } }
+    allMdx(
+      filter: { frontmatter: { slug: { regex: "/boj/" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       totalCount
@@ -59,8 +59,8 @@ const query = graphql`
         id
         frontmatter {
           date(formatString: "YYYY년 MM월 DD일")
-          title
           slug
+          title
         }
       }
     }
