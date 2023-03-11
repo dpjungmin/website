@@ -58,7 +58,7 @@ export const Job = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  box-shadow: rgb(255 178 56 / 20%) 0px 4px 16px 0px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 4px 16px 0px;
   transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
   margin: 1rem;
   padding: 2rem;
@@ -76,12 +76,16 @@ export const Job = styled.div`
     margin-left: 1px;
     // margin-bottom: 20px;
     font-family: var(--font-mono);
-    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-size: ${({ theme }) => theme.fontSizes.xs};
     color: ${({ theme }) => theme.colors.text.secondary};
+
+    .location {
+      color: ${({ theme }) => theme.colors.orange[60]};
+    }
   }
 
   &:hover {
-    box-shadow: rgb(255 178 56 / 40%) 0px 4px 16px 0px;
+    box-shadow: rgb(255 178 56 / 30%) 0px 4px 16px 0px;
   }
 
   &:not(:first-child) {
