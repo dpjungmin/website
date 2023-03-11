@@ -27,7 +27,35 @@ import { Container, Title, Article } from "@styles/pages/blog/post.styles"
 
 [문제](https://www.acmicpc.net/problem/1937)
 
-<p>Description</p>
+<p>
+  판다가 이동할 수 있는 칸의 수의 최댓값을 구하는 **최적화** 문제이다. 이 문제는
+  <code class="language-text">DP</code>의 필요조건 (overlapping subproblem & optimal
+  substructure)을 만족하기 때문에 DP를 사용해서 풀 수 있다.
+</p>
+
+> <p>
+>   Overlapping subproblem: 부분 문제가 반복적으로 나타난다. 판다가 $(i, j)$에
+>   놓인 경우의 문제는 판다가 $(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)$에
+>   놓인 경우를 부분 문제로 가진다. 이 부분 문제들은 다시 $(i, j)$에 놓인 경우를
+>   부분 문제로 가진다.
+> </p>
+
+> <p>
+>   Optimal substructure: 부분 문제의 최적값이 전체 문제의 최적값을 구하는데
+>   사용된다. 판다가 $(i, j)$에 놓인 경우의 최적값은 판다가 $(i, j)$의
+>   상하좌우에 놓인 경우의 최적값을 필요로 한다.
+> </p>
+
+<p>
+  $dp[i][j]$를 판다가 $(i, j)$에 놓인 경우 이동할 수 있는 칸의 수의 최댓값이라고
+  하면 점화식은 아래와 같다.
+</p>
+
+$dp[i][j] = max(dp[i][j], max(dp[i - 1][j], dp[i + 1][j], dp[i][j - 1], dp[i][j + 1]) + 1)$
+where $(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)$ is within boundary and
+smaller than $dp[i][j]$
+
+<p>구현은 top-down 방식으로 구현했다.</p>
 
 ```cpp
 #include <bits/stdc++.h>
@@ -84,6 +112,11 @@ int main(void) {
   cout << ans;
 }
 ```
+
+대나무 숲의 크기 $n * n$을 $N$이라고 하면,
+
+- time complexity: $O(N)$
+- space complexity: $O(N)$
 
 </Article>
 </Container>
