@@ -27,9 +27,12 @@ import { Container, Title, Article } from "@styles/pages/blog/post.styles"
 
 [문제](https://www.acmicpc.net/problem/2573)
 
-<p>Description</p>
+<p>
+  <code class="language-text">BFS</code>를 이용해 시간이 지남에 따라 빙산이 녹는
+  것을 시물레이션 하면 되는 문제이다.
+</p>
 
-```cpp
+```cpp{numberLines: true}
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -43,6 +46,7 @@ int main(void) {
   int n, m;
   cin >> n >> m;
 
+  // highlight-next-line
   vector<vector<int>> a(n + 2, vector<int>(m + 2));
 
   for (int i = 1; i <= n; i++) {
@@ -51,6 +55,7 @@ int main(void) {
     }
   }
 
+  // 연결 요소의 개수를 돌려준다.
   auto connected_components = [&]() {
     int cnt = 0;
     vector<vector<bool>> vis(n + 2, vector<bool>(m + 2));
@@ -79,6 +84,7 @@ int main(void) {
     return cnt;
   };
 
+  // 시간 1년을 시물레이션 한다.
   auto tick = [&]() {
     vector<vector<int>> b(n + 2, vector<int>(m + 2));
     for (int i = 1; i <= n; i++) {
@@ -108,16 +114,27 @@ int main(void) {
   while (cnt == 1) {
     tick();
     cnt = connected_components();
+    // highlight-start
     if (!cnt) {
       ans = 0;
       break;
     }
+    // highlight-end
     ans++;
   };
 
   cout << ans;
 }
 ```
+
+<p>
+  상하좌우 bounds check을 쉽게 하기 위해 14번 줄에 2차원 배열에 padding을
+  추가한다.
+</p>
+
+<p>
+  빙산이 다 녹을 때까지 분리되지 않으면 0을 출력하는 부분은 81~84줄에 처리한다.
+</p>
 
 </Article>
 </Container>
