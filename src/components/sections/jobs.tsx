@@ -50,13 +50,8 @@ const Jobs: React.FC = () => {
                   </span>
                 </h3>
 
-                <p className="range">
-                  {range}
-                  <span className="location">
-                    {" // "}
-                    {location}
-                  </span>
-                </p>
+                <p className="range">{range}</p>
+                <p className="location">{location}</p>
 
                 <$.Text dangerouslySetInnerHTML={{ __html: html }} />
               </$.Job>
