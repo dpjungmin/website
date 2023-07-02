@@ -9,6 +9,14 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ location }) => {
+  React.useEffect(() => {
+    const codeCopyButtons = document.querySelectorAll(".gatsby-code-button")
+
+    for (const button of codeCopyButtons) {
+      button.innerHTML = ""
+    }
+  }, [])
+
   return (
     <Layout location={location}>
       <SEO />

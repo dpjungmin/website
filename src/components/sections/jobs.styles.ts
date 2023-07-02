@@ -37,7 +37,7 @@ export const JobList = styled.div`
     flex-direction: column;
     padding: 0;
     margin: 0;
-    list-style: none;
+    // list-style: none;
 
     li {
       position: relative;

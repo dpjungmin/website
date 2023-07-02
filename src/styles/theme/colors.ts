@@ -270,6 +270,10 @@ const colors = {
       bg: palette.yellow[70],
       text: palette.grey[5],
     },
+    toml: {
+      bg: "#fffaf0",
+      text: "#9c4221",
+    },
   },
 }
 

@@ -204,6 +204,12 @@ const prism = css`
     color: ${({ theme }) => theme.colors.languageBadge.rust.text};
   }
 
+  .gatsby-highlight pre[class="language-toml"]::before {
+    content: "toml";
+    background: ${({ theme }) => theme.colors.languageBadge.toml.bg};
+    color: ${({ theme }) => theme.colors.languageBadge.toml.text};
+  }
+
   .gatsby-highlight pre[class="language-shell"]::before {
     content: "shell";
   }
@@ -249,6 +255,18 @@ const prism = css`
   /*****  Tokens  *****/
 
   .token {
+    &.table {
+      &.class-name {
+        color: ${({ theme }) => theme.colors.yellow[40]};
+      }
+    }
+
+    &.key {
+      &.property {
+        color: ${({ theme }) => theme.colors.code.keyword};
+      }
+    }
+
     &.keyword {
       color: ${({ theme }) => theme.colors.code.keyword};
       font-weight: bold;
