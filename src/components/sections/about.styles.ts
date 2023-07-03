@@ -44,6 +44,7 @@ export const Section = styled.section`
 `
 
 export const Text = styled.div`
+  width: 100%;
   font-size: 1.4em;
 
   p {
